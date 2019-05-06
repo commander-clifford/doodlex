@@ -1,0 +1,40 @@
+<div
+  [ngClass]="this.selectedResult.scibox.class"
+  class="scibox"
+  id="scibox">
+
+    <mat-card id="scibox__mat-card" class="scibox__mat-card">
+
+      <mat-card-content class="scibox__mat-card-content">
+
+        <div class="scibox__mat-card-content--left">
+          <!-- <p
+            id="scibox__title"
+            class="scibox__title"
+            [innerHTML]="this.selectedResult.scibox.title">
+          </p> -->
+          <!-- <p
+            class="scibox__desc"
+            [innerHTML]="this.selectedResult.scibox.desc">
+          </p> -->
+        </div>
+
+        <div
+          id="right-side"
+          class="scibox__mat-card-content--right">
+          <mat-icon class="scibox__title">share</mat-icon>
+          <img
+            id="character"
+            class="scibox__img"
+            [src]="this.selectedResult.scibox.mascotUrl"
+            [alt]="this.selectedResult.scibox.mascotAlt"/>
+        </div>
+
+      </mat-card-content>
+
+    </mat-card>
+
+</div>
+
+
+<!-- class="scibox scibox--{{this.selectedResult.scibox.class}}" -->

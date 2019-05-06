@@ -1,0 +1,32 @@
+<div class="abstract">
+
+  <mat-card
+    *ngFor="let abs of this.selectedResult.abstract"
+    class="abstract__card">
+
+    <mat-card-content>
+
+      <div class="">
+        <p
+          class="abstract__title">
+          {{abs.title}}
+        </p>
+        <p
+          class="abstract__url link">
+          {{abs.url}}
+        </p>
+        <p
+          class="abstract__desc">
+          {{abs.desc}}
+        </p>
+        <p
+          class="abstract__tags">
+          {{abs.tags}}
+        </p>
+      </div>
+
+    </mat-card-content>
+
+  </mat-card>
+
+</div>

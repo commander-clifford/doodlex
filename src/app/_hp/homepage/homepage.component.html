@@ -1,0 +1,48 @@
+<div class="homepage">
+
+  <!-- TOOLBAR -->
+  <div class="fade-in">
+    <app-homepage-toolbar></app-homepage-toolbar>
+  </div>
+
+  <main class="main">
+
+    <!-- DOODLE SPACE -->
+    <div class="stagger-out">
+      <app-homepage-logo
+        class="homepage__logo"
+        [doodle]="doodletypes[globals.activeDoodleID]"
+        [logo]="doodletypes[globals.activeDoodleID].logo"
+        [searchQuery]="doodletypes[globals.activeDoodleID].triggers[0]">
+      </app-homepage-logo>
+    </div>
+
+    <!-- SEARCH BAR -->
+    <div class="stagger-in stagger-out">
+
+      <app-search-bar
+        class="primary"
+        page="homepage">
+      </app-search-bar>
+
+    </div>
+
+    <div
+      *ngIf="this.isMobileResolution"
+      class="stagger-in stagger-out">
+      <app-homepage-categories></app-homepage-categories>
+    </div>
+
+    <!-- HPP -->
+    <div class="stagger-in stagger-out">
+      <app-hompepage-hpp [doodle]="doodletypes[globals.activeDoodleID]"></app-hompepage-hpp>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div class="fade-in">
+    <app-homepage-footer></app-homepage-footer>
+  </div>
+
+</div>

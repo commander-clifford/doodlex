@@ -1,0 +1,1235 @@
+<!-- Doodles -->
+<mat-expansion-panel *ngIf="false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Doodles
+    </mat-panel-title>
+    <mat-panel-description>
+      <span
+        matTooltip="{{doodletypes[globals.activeDoodleID].name}}: {{doodletypes[globals.activeDoodleID].desc}}"
+        [matTooltipPosition]="'right'"
+        class="nowrap">
+        {{doodletypes[globals.activeDoodleID].name}}
+      </span>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <button
+    class="flex"
+    *ngFor="let doodle of activeDoodletypes"
+    mat-button
+    matTooltip="{{doodle.desc}}"
+    [matTooltipPosition]="'right'"
+    (click)="setActiveDoodle(doodle.id, doodle.triggers[0])"
+    [style.fontWeight]="doodle.highlight ? 'bold' : null"
+    >
+     <span>{{doodle.name}}</span>
+     <mat-chip-list>
+       <mat-chip *ngIf="doodle.tagGmail">gm</mat-chip>
+       <!-- <mat-chip *ngIf="doodle.tagSrp">srp</mat-chip> -->
+     </mat-chip-list>
+  </button>
+</mat-expansion-panel>
+
+
+
+<!-- gmail Doodle Options -->
+<mat-expansion-panel *ngIf="local == 'ginbox'">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      OGB Doodle Options
+    </mat-panel-title>
+    <mat-panel-description>
+      <span
+        style="width:80%;"
+        class="nowrap">
+        <span *ngIf="this.globals.gmailDoodleNo" matTooltip="No Doodle"[matTooltipPosition]="'right'">No Doodle</span>
+        <span *ngIf="this.globals.gmailDoodleLevelOne" matTooltip="Level One"[matTooltipPosition]="'right'">Level One</span>
+        <span *ngIf="this.globals.gmailDoodleLevelTwo" matTooltip="Level Two"[matTooltipPosition]="'right'">Level Two</span>
+      </span>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <button
+    [disabled]="!doodletypes[globals.activeDoodleID].logo.gmail.no"
+    mat-button
+    matTooltip="light logo replacement"
+    [matTooltipPosition]="'right'"
+    (click)="changeGmailDoodleType('light')"
+    [class.active]="this.globals.gmailDoodleNo">
+    <span *ngIf="this.globals.gmailDoodleNo">*</span>
+    No Doodle
+  </button>
+
+  <button
+    [disabled]="!doodletypes[globals.activeDoodleID].logo.gmail.levelOne"
+    mat-button
+    matTooltip="medium logo replacement"
+    [matTooltipPosition]="'right'"
+    (click)="changeGmailDoodleType('medium')"
+    [class.active]="this.globals.gmailDoodleLevelOne">
+    <span *ngIf="this.globals.gmailDoodleLevelOne">*</span>
+    Level One
+  </button>
+
+  <button
+
+    disabled
+    mat-button
+    matTooltip="levelFour logo replacement"
+    [matTooltipPosition]="'right'"
+    (click)="changeGmailDoodleType('levelFour')"
+    [class.active]="this.globals.gmailDoodleLevelTwo">
+    <span *ngIf="this.globals.gmailDoodleLevelTwo">*</span>
+    Level Two
+  </button>
+  <!-- [disabled]="!doodletypes[globals.activeDoodleID].logo.gmail.levelTwo" -->
+
+</mat-expansion-panel>
+
+<!-- gmail Doodle Decor -->
+<mat-expansion-panel *ngIf="local == 'ginbox'">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      OGB Doodle Decor
+    </mat-panel-title>
+    <mat-panel-description>
+
+      <span
+        style="width:80%;"
+        class="nowrap">
+        <span
+          *ngIf="this.globals.gmailDecorNo"
+          matTooltip="No Decor"
+          [matTooltipPosition]="'right'">
+          No Decor
+        </span>
+        <span
+          *ngIf="this.globals.gmailDecorLevelOne"
+          matTooltip="Light Decor"
+          [matTooltipPosition]="'right'">
+          Level One Decor
+        </span>
+        <span
+          *ngIf="this.globals.gmailDecorLevelTwo"
+          matTooltip="Medium One Decor"
+          [matTooltipPosition]="'right'">
+          Level Two Decor
+        </span>
+        <span
+          *ngIf="this.globals.gmailDecorLevelThree"
+          matTooltip="Medium Two Decor"
+          [matTooltipPosition]="'right'">
+          Level Three Decor
+        </span>
+        <span
+          *ngIf="this.globals.gmailDecorLevelFour"
+          matTooltip="Heavy Decor"
+          [matTooltipPosition]="'right'">
+          Level Four Decor
+        </span>
+      </span>
+
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <button
+    mat-button
+    (click)="changeGmailDecor('gmailDecorNo')"
+    [class.active]="this.globals.gmailDecorNo">
+    <span *ngIf="this.globals.gmailDecorNo">*</span>
+    No Decor
+  </button>
+
+  <button
+    mat-button
+    (click)="changeGmailDecor('gmailDecorLevelOne')"
+    [class.active]="this.globals.gmailSimpleToolbarDecor">
+    <span *ngIf="this.globals.gmailDecorLevelOne">*</span>
+    Level One Decor
+  </button>
+
+  <button
+    disabled
+    mat-button
+    (click)="changeGmailDecor('gmailDecorLevelTwo')"
+    [class.active]="this.globals.gmailElaborateToolbarDecor">
+    <span *ngIf="this.globals.gmailDecorLevelTwo">*</span>
+    Level Two Decor
+  </button>
+
+  <button
+    disabled
+    mat-button
+    (click)="changeGmailDecor('gmailDecorLevelThree')"
+    [class.active]="this.globals.gmailElaborateToolbarDecor">
+    <span *ngIf="this.globals.gmailDecorLevelThree">*</span>
+    Level Three Decor
+  </button>
+
+  <button
+    disabled
+    mat-button
+    (click)="changeGmailDecor('gmailDecorLevelFour')"
+    [class.active]="this.globals.gmailWholePageDecor">
+    <span *ngIf="this.globals.gmailDecorLevelFour">*</span>
+    Level Four Decor
+  </button>
+
+</mat-expansion-panel>
+
+<!-- gmail searchBar Decor -->
+<mat-expansion-panel *ngIf="local == 'ginbox'">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Search Bar Color
+    </mat-panel-title>
+    <mat-panel-description>
+
+      <span
+        style="width:80%;"
+        class="nowrap">
+        <span
+          *ngIf="this.globals.gmailSearchBarLevelOne"
+          matTooltip="Light Decor"
+          [matTooltipPosition]="'right'">
+          Level One Decor
+        </span>
+        <span
+          *ngIf="this.globals.gmailSearchBarLevelTwo"
+          matTooltip="Medium One Decor"
+          [matTooltipPosition]="'right'">
+          Level Two Decor
+        </span>
+        <span
+          *ngIf="this.globals.gmailSearchBarLevelThree"
+          matTooltip="Medium Two Decor"
+          [matTooltipPosition]="'right'">
+          Level Three Decor
+        </span>
+        <span
+          *ngIf="this.globals.gmailSearchBarLevelFour"
+          matTooltip="Heavy Decor"
+          [matTooltipPosition]="'right'">
+          Level Four Decor
+        </span>
+      </span>
+
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <button
+    mat-button
+    (click)="changeGmailSearchBarColor('l1')"
+    [class.active]="this.globals.gmailSearchBarLevelOne">
+    <span *ngIf="this.globals.gmailSearchBarLevelOne">*</span>
+    Standard (#f1f3f4)
+  </button>
+
+  <button
+    mat-button
+    (click)="changeGmailSearchBarColor('l2')"
+    [class.active]="this.globals.gmailSearchBarLevelTwo">
+    <span *ngIf="this.globals.gmailSearchBarLevelTwo">*</span>
+    L2
+  </button>
+
+  <button
+    mat-button
+    (click)="changeGmailSearchBarColor('l3')"
+    [class.active]="this.globals.gmailSearchBarLevelThree">
+    <span *ngIf="this.globals.gmailSearchBarLevelThree">*</span>
+    L3
+  </button>
+
+  <button
+    mat-button
+    (click)="changeGmailSearchBarColor('l4')"
+    [class.active]="this.globals.gmailSearchBarLevelFour">
+    <span *ngIf="this.globals.gmailSearchBarLevelFour">*</span>
+    L4
+  </button>
+
+</mat-expansion-panel>
+
+
+
+        <mat-expansion-panel *ngIf="false && local == 'ginbox'">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              OGB interaction targets
+            </mat-panel-title>
+            <mat-panel-description>
+              define behaviors
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+
+
+
+          <p>Brand Section & Product Controls</p>
+
+          <button
+            mat-raised-button
+            (click)="this.globals.useNegativeOGBSpace = !this.globals.useNegativeOGBSpace"
+            style="background:white; color:black;"
+            >
+            useNegativeOGBSpace
+            <span *ngIf="this.globals.useNegativeOGBSpace">*</span>
+            <span *ngIf="!this.globals.useNegativeOGBSpace">&nbsp;</span>
+          </button>
+
+          <!-- <p>Doodle info close behavior</p>
+
+          <button
+            mat-raised-button
+            (mouseup)="this.globals.hoverLeaveClose = !this.globals.hoverLeaveClose"
+            style="background:white; color:black;"
+            >
+            close on hover leave
+            <span *ngIf="this.globals.hoverLeaveClose">*</span>
+            <span *ngIf="!this.globals.hoverLeaveClose">&nbsp;</span>
+          </button> -->
+
+          <p>Sections</p>
+
+          <div
+            class=""
+            style="display: flex; flex-wrap: wrap;"
+            (mousedown)="this.globals.superInProductControlsSection = false; this.globals.superInGoogleControlsSection = false;"
+            >
+            <button
+              mat-raised-button
+              (mouseup)="this.globals.superInProductControlsSection = !this.globals.superInProductControlsSection"
+              style="background:white; color:black; width: 50%;"
+              >
+              left
+              <span *ngIf="this.globals.superInProductControlsSection">*</span>
+              <span *ngIf="!this.globals.superInProductControlsSection">&nbsp;</span>
+            </button>
+            <button
+              mat-raised-button
+              (mouseup)="this.globals.superInGoogleControlsSection = !this.globals.superInGoogleControlsSection"
+              style="background:white; color:black; width: 50%;"
+              >
+              right
+              <span *ngIf="this.globals.superInGoogleControlsSection">*</span>
+              <span *ngIf="!this.globals.superInGoogleControlsSection">&nbsp;</span>
+            </button>
+
+          </div>
+
+
+          <p>click targets</p>
+
+          <div
+            (mousedown)="this.globals.seePencilVestor = false;this.globals.seeSuperD = false;this.globals.seeSuperG = false;this.globals.seeVideogameAsset=false;"
+            style="display: flex; flex-wrap: wrap;"
+            >
+
+            <button
+              mat-raised-button
+              (mouseup)="this.globals.seePencilVestor = !this.globals.seePencilVestor"
+              style="background:white; color:black; width: 50%;"
+              >
+              Pencil
+              <span *ngIf="this.globals.seePencilVestor">*</span>
+              <span *ngIf="!this.globals.seePencilVestor">&nbsp;</span>
+            </button>
+            <button
+              mat-raised-button
+              (mouseup)="this.globals.seeSuperG = !this.globals.seeSuperG"
+              style="background:white; color:black; width: 50%;"
+              >
+              Super G
+              <span *ngIf="this.globals.seeSuperG">*</span>
+              <span *ngIf="!this.globals.seeSuperG">&nbsp;</span>
+            </button>
+            <button
+              mat-raised-button
+              (mouseup)="this.globals.seeSuperD = !this.globals.seeSuperD"
+              style="background:white; color:black; width: 50%;"
+              >
+              Super D
+              <span *ngIf="this.globals.seeSuperD">*</span>
+              <span *ngIf="!this.globals.seeSuperD">&nbsp;</span>
+            </button>
+            <button
+              mat-raised-button
+              (mouseup)="this.globals.seeVideogameAsset = !this.globals.seeVideogameAsset"
+              style="background:white; color:black; width: 50%;"
+              >
+              Interactive
+              <span *ngIf="this.globals.seeVideogameAsset">*</span>
+              <span *ngIf="!this.globals.seeVideogameAsset">&nbsp;</span>
+            </button>
+
+          </div>
+
+        </mat-expansion-panel>
+
+
+
+        <mat-accordion>
+
+                <!-- SRP Doodle Options -->
+                <mat-expansion-panel *ngIf="local == 'results'">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      SRP Doodle Options
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      <span
+                        style="width:80%;"
+                        class="nowrap">
+                        <span *ngIf="this.globals.logoFullReplace" matTooltip="Full Replace"
+                        [matTooltipPosition]="'right'">Full</span>
+                        <span *ngIf="this.globals.logoOpenLetterReplace" matTooltip="Open Letter Replace"
+                        [matTooltipPosition]="'right'">Open</span>
+                        <span *ngIf="this.globals.logoStrictLetterReplace" matTooltip="Strict Letter Replace"
+                        [matTooltipPosition]="'right'">Strict</span>
+                      </span>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+
+                  <button
+                    [disabled]="!doodletypes[globals.activeDoodleID].logo.srp.fullReplace"
+                    mat-button
+                    matTooltip="Full Logo Replacment"
+                    [matTooltipPosition]="'right'"
+                    (click)="changeSrpDoodleType('fullReplace')"
+                    [class.active]="this.globals.logoFullReplace">
+                    <span *ngIf="this.globals.logoFullReplace">*</span>
+                    Full Replace
+                  </button>
+
+                  <button
+                    [disabled]="!doodletypes[globals.activeDoodleID].logo.srp.openLetterReplace"
+                    mat-button
+                    matTooltip="Modified Logo"
+                    [matTooltipPosition]="'right'"
+                    (click)="changeSrpDoodleType('openLetterReplace')"
+                    [class.active]="this.globals.logoOpenLetterReplace">
+                    <span *ngIf="this.globals.logoOpenLetterReplace">*</span>
+                    Open Letter Replace
+                  </button>
+
+                  <button
+                    [disabled]="!doodletypes[globals.activeDoodleID].logo.srp.letterReplace"
+                    mat-button
+                    matTooltip="Modified Logo with Brand Colors"
+                    [matTooltipPosition]="'right'"
+                    (click)="changeSrpDoodleType('letterReplace')"
+                    [class.active]="this.globals.logoStrictLetterReplace">
+                    <span *ngIf="this.globals.logoStrictLetterReplace">*</span>
+                    Strict Letter Replace
+                  </button>
+
+                </mat-expansion-panel>
+
+                <!-- SRP Doodle Decor -->
+                <mat-expansion-panel *ngIf="local == 'results'">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      SRP Doodle Decor
+                    </mat-panel-title>
+                    <mat-panel-description>
+
+                      <span
+                        style="width:80%;"
+                        class="nowrap">
+                        <span
+                          *ngIf="this.globals.srpNoDecor"
+                          matTooltip="No Decor"
+                          [matTooltipPosition]="'right'">
+                          None
+                        </span>
+                        <span
+                          *ngIf="this.globals.srpSimpleToolbarDecor"
+                          matTooltip="Simple Decor"
+                          [matTooltipPosition]="'right'">
+                          Simple
+                        </span>
+                        <span
+                          *ngIf="this.globals.srpElaborateToolbarDecor"
+                          matTooltip="Elaborate Decor"
+                          [matTooltipPosition]="'right'">
+                          Elaborate
+                        </span>
+                        <span
+                          *ngIf="this.globals.srpWholePageDecor"
+                          matTooltip="Whole Page Decor"
+                          [matTooltipPosition]="'right'">
+                          Whole Page
+                        </span>
+                      </span>
+
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+
+                  <button
+                    mat-button
+                    (click)="changeSrpDecor('srpNoDecor')"
+                    [class.active]="this.globals.srpNoDecor">
+                    <span *ngIf="this.globals.srpNoDecor">*</span>
+                    None
+                  </button>
+
+                  <button
+                    mat-button
+                    (click)="changeSrpDecor('srpSimpleToolbarDecor')"
+                    [class.active]="this.globals.srpSimpleToolbarDecor">
+                    <span *ngIf="this.globals.srpSimpleToolbarDecor">*</span>
+                    Simple Toolbar
+                  </button>
+
+                  <button
+                    mat-button
+                    (click)="changeSrpDecor('srpElaborateToolbarDecor')"
+                    [class.active]="this.globals.srpElaborateToolbarDecor">
+                    <span *ngIf="this.globals.srpElaborateToolbarDecor">*</span>
+                    Elaborte Toolbar
+                  </button>
+
+                  <button
+                    mat-button
+                    (click)="changeSrpDecor('srpWholePageDecor')"
+                    [class.active]="this.globals.srpWholePageDecor">
+                    <span *ngIf="this.globals.srpWholePageDecor">*</span>
+                    Whole Page
+                  </button>
+
+                </mat-expansion-panel>
+
+
+
+
+
+              </mat-accordion>
+
+
+
+
+
+              <mat-tab label="Advanced">
+
+                <p class="app-menu__title">Environment Options:</p>
+
+                <mat-accordion>
+
+                  <!-- Ambient Light -->
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Ambient Light
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        under construction
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <button
+                      mat-button
+                      disabled>
+                      Light Mode
+                    </button>
+                    <button
+                      mat-button
+                      disabled>
+                      Dark Mode
+                    </button>
+                  </mat-expansion-panel>
+
+                  <!-- Screen Size -->
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Device Type
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        under construction
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>under construction</p>
+                  </mat-expansion-panel>
+
+                  <!-- Screen Size -->
+                  <mat-expansion-panel expanded>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Screen Size
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        under construction
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <mat-divider></mat-divider>
+                    <p style="font-size:0.8em;"><i>Environment beta:</i></p>
+                    <mat-slide-toggle [checked]="this.globals.isMobileResolution" (change)="toggleMobileLayout()">isMobileLayout</mat-slide-toggle>
+                    <br>
+                    <mat-slide-toggle [checked]="this.globals.useMobileDeviceFrame" (change)="toggleMobileFrame()">useMobileFrame (gmail only)</mat-slide-toggle>
+                    <mat-divider></mat-divider>
+
+                    <!-- <button
+                      mat-button
+                      disabled>
+                      Small Mode
+                    </button> -->
+                    <!-- <button
+                      mat-button
+                      disabled>
+                      Large Mode
+                    </button> -->
+
+                  </mat-expansion-panel>
+
+                </mat-accordion>
+
+                <p class="app-menu__title">Search based experiences</p>
+
+                <mat-accordion>
+
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Santa Claus
+                      </mat-panel-title>
+                      <mat-panel-description>
+
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <ul>
+                      <li>search "Santa&nbsp;Claus"</li>
+                      <li>click the "Santa&nbsp;Claus" character</li>
+                      <li>*WARNING: Santa sound will play! (it's the best free audio clip)</li>
+                    </ul>
+
+                  </mat-expansion-panel>
+
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Mistletoe
+                      </mat-panel-title>
+                      <mat-panel-description>
+
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <ul>
+                      <li>search "Mistletoe"</li>
+                      <li>click the "Mistletoe" character</li>
+                      <li>*WARNING: sound will play</li>
+                    </ul>
+
+                  </mat-expansion-panel>
+
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Easter Egg Hunt
+                      </mat-panel-title>
+                      <mat-panel-description>
+
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <ul>
+                      <li>search "Easter"
+                        <ul>
+                          <li>or set the Doodle to "Easter" and click the Doodle</li>
+                        </ul>
+                      </li>
+                      <li>click the "Easter Bunny" character</li>
+                      <li>Follow Easter Bunny on trivia scavenger hunt</li>
+                      <li>Answers:
+                        <ul>
+                          <li>Easter Egg Hunt</li>
+                          <li>Easter Bunny</li>
+                          <li>Easter Basket</li>
+                          <li>Easter Beagle</li>
+                          <li>Easter Egg Roll</li>
+                          <li>Easter Peeps</li>
+                        </ul>
+                      </li>
+                      <li>*Game end reward TBD</li>
+
+                    </ul>
+
+                  </mat-expansion-panel>
+
+                  <!-- Aurora -->
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Aurora
+                      </mat-panel-title>
+                      <mat-panel-description>
+
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <ul>
+                      <li>search "Aurora Borealis"
+                        <ul>
+                          <li>or simply "Aurora"</li>
+                        </ul>
+                      </li>
+                      <li>check out the animation and familiar character</li>
+                      <li>*Possibilites for a 'Science Box'</li>
+                      <li>*'Click to Start' has no implementation yet</li>
+
+                    </ul>
+
+                  </mat-expansion-panel>
+
+                </mat-accordion>
+
+              </mat-tab>
+
+
+
+
+
+
+
+
+
+
+
+                    <mat-accordion>
+
+                      <!-- Doodles -->
+                      <mat-expansion-panel *ngIf="false">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Doodles
+                          </mat-panel-title>
+                          <mat-panel-description>
+                            <span
+                              matTooltip="{{doodletypes[globals.activeDoodleID].name}}: {{doodletypes[globals.activeDoodleID].desc}}"
+                              [matTooltipPosition]="'right'"
+                              class="nowrap">
+                              {{doodletypes[globals.activeDoodleID].name}}
+                            </span>
+                          </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <button
+                          class="flex"
+                          *ngFor="let doodle of activeDoodletypes"
+                          mat-button
+                          matTooltip="{{doodle.desc}}"
+                          [matTooltipPosition]="'right'"
+                          (click)="setActiveDoodle(doodle.id, doodle.triggers[0])"
+                          [style.fontWeight]="doodle.highlight ? 'bold' : null"
+                          >
+                           <span>{{doodle.name}}</span>
+                           <mat-chip-list>
+                             <mat-chip *ngIf="doodle.tagGmail">gm</mat-chip>
+                             <!-- <mat-chip *ngIf="doodle.tagSrp">srp</mat-chip> -->
+                           </mat-chip-list>
+                        </button>
+                      </mat-expansion-panel>
+
+                      <mat-divider *ngIf="local == 'results'"></mat-divider>
+
+                      <!-- SRP Doodle Options -->
+                      <mat-expansion-panel *ngIf="local == 'results'">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            SRP Doodle Options
+                          </mat-panel-title>
+                          <mat-panel-description>
+                            <span
+                              style="width:80%;"
+                              class="nowrap">
+                              <span *ngIf="this.globals.logoFullReplace" matTooltip="Full Replace"
+                              [matTooltipPosition]="'right'">Full</span>
+                              <span *ngIf="this.globals.logoOpenLetterReplace" matTooltip="Open Letter Replace"
+                              [matTooltipPosition]="'right'">Open</span>
+                              <span *ngIf="this.globals.logoStrictLetterReplace" matTooltip="Strict Letter Replace"
+                              [matTooltipPosition]="'right'">Strict</span>
+                            </span>
+                          </mat-panel-description>
+                        </mat-expansion-panel-header>
+
+                        <button
+                          [disabled]="!doodletypes[globals.activeDoodleID].logo.srp.fullReplace"
+                          mat-button
+                          matTooltip="Full Logo Replacment"
+                          [matTooltipPosition]="'right'"
+                          (click)="changeSrpDoodleType('fullReplace')"
+                          [class.active]="this.globals.logoFullReplace">
+                          <span *ngIf="this.globals.logoFullReplace">*</span>
+                          Full Replace
+                        </button>
+
+                        <button
+                          [disabled]="!doodletypes[globals.activeDoodleID].logo.srp.openLetterReplace"
+                          mat-button
+                          matTooltip="Modified Logo"
+                          [matTooltipPosition]="'right'"
+                          (click)="changeSrpDoodleType('openLetterReplace')"
+                          [class.active]="this.globals.logoOpenLetterReplace">
+                          <span *ngIf="this.globals.logoOpenLetterReplace">*</span>
+                          Open Letter Replace
+                        </button>
+
+                        <button
+                          [disabled]="!doodletypes[globals.activeDoodleID].logo.srp.letterReplace"
+                          mat-button
+                          matTooltip="Modified Logo with Brand Colors"
+                          [matTooltipPosition]="'right'"
+                          (click)="changeSrpDoodleType('letterReplace')"
+                          [class.active]="this.globals.logoStrictLetterReplace">
+                          <span *ngIf="this.globals.logoStrictLetterReplace">*</span>
+                          Strict Letter Replace
+                        </button>
+
+                      </mat-expansion-panel>
+
+                      <!-- SRP Doodle Decor -->
+                      <mat-expansion-panel *ngIf="local == 'results'">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            SRP Doodle Decor
+                          </mat-panel-title>
+                          <mat-panel-description>
+
+                            <span
+                              style="width:80%;"
+                              class="nowrap">
+                              <span
+                                *ngIf="this.globals.srpNoDecor"
+                                matTooltip="No Decor"
+                                [matTooltipPosition]="'right'">
+                                None
+                              </span>
+                              <span
+                                *ngIf="this.globals.srpSimpleToolbarDecor"
+                                matTooltip="Simple Decor"
+                                [matTooltipPosition]="'right'">
+                                Simple
+                              </span>
+                              <span
+                                *ngIf="this.globals.srpElaborateToolbarDecor"
+                                matTooltip="Elaborate Decor"
+                                [matTooltipPosition]="'right'">
+                                Elaborate
+                              </span>
+                              <span
+                                *ngIf="this.globals.srpWholePageDecor"
+                                matTooltip="Whole Page Decor"
+                                [matTooltipPosition]="'right'">
+                                Whole Page
+                              </span>
+                            </span>
+
+                          </mat-panel-description>
+                        </mat-expansion-panel-header>
+
+                        <button
+                          mat-button
+                          (click)="changeSrpDecor('srpNoDecor')"
+                          [class.active]="this.globals.srpNoDecor">
+                          <span *ngIf="this.globals.srpNoDecor">*</span>
+                          None
+                        </button>
+
+                        <button
+                          mat-button
+                          (click)="changeSrpDecor('srpSimpleToolbarDecor')"
+                          [class.active]="this.globals.srpSimpleToolbarDecor">
+                          <span *ngIf="this.globals.srpSimpleToolbarDecor">*</span>
+                          Simple Toolbar
+                        </button>
+
+                        <button
+                          mat-button
+                          (click)="changeSrpDecor('srpElaborateToolbarDecor')"
+                          [class.active]="this.globals.srpElaborateToolbarDecor">
+                          <span *ngIf="this.globals.srpElaborateToolbarDecor">*</span>
+                          Elaborte Toolbar
+                        </button>
+
+                        <button
+                          mat-button
+                          (click)="changeSrpDecor('srpWholePageDecor')"
+                          [class.active]="this.globals.srpWholePageDecor">
+                          <span *ngIf="this.globals.srpWholePageDecor">*</span>
+                          Whole Page
+                        </button>
+
+                      </mat-expansion-panel>
+
+                      <mat-divider *ngIf="local == 'ginbox'"></mat-divider>
+
+                      <!-- gmail Doodle Options -->
+                      <mat-expansion-panel *ngIf="local == 'ginbox'">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            OGB Doodle Options
+                          </mat-panel-title>
+                          <mat-panel-description>
+                            <span
+                              style="width:80%;"
+                              class="nowrap">
+                              <span *ngIf="this.globals.gmailDoodleNo" matTooltip="No Doodle"[matTooltipPosition]="'right'">No Doodle</span>
+                              <span *ngIf="this.globals.gmailDoodleLevelOne" matTooltip="Level One"[matTooltipPosition]="'right'">Level One</span>
+                              <span *ngIf="this.globals.gmailDoodleLevelTwo" matTooltip="Level Two"[matTooltipPosition]="'right'">Level Two</span>
+                            </span>
+                          </mat-panel-description>
+                        </mat-expansion-panel-header>
+
+                        <button
+                          [disabled]="!doodletypes[globals.activeDoodleID].logo.gmail.no"
+                          mat-button
+                          matTooltip="light logo replacement"
+                          [matTooltipPosition]="'right'"
+                          (click)="changeGmailDoodleType('light')"
+                          [class.active]="this.globals.gmailDoodleNo">
+                          <span *ngIf="this.globals.gmailDoodleNo">*</span>
+                          No Doodle
+                        </button>
+
+                        <button
+                          [disabled]="!doodletypes[globals.activeDoodleID].logo.gmail.levelOne"
+                          mat-button
+                          matTooltip="medium logo replacement"
+                          [matTooltipPosition]="'right'"
+                          (click)="changeGmailDoodleType('medium')"
+                          [class.active]="this.globals.gmailDoodleLevelOne">
+                          <span *ngIf="this.globals.gmailDoodleLevelOne">*</span>
+                          Level One
+                        </button>
+
+                        <button
+
+                          disabled
+                          mat-button
+                          matTooltip="levelFour logo replacement"
+                          [matTooltipPosition]="'right'"
+                          (click)="changeGmailDoodleType('levelFour')"
+                          [class.active]="this.globals.gmailDoodleLevelTwo">
+                          <span *ngIf="this.globals.gmailDoodleLevelTwo">*</span>
+                          Level Two
+                        </button>
+                        <!-- [disabled]="!doodletypes[globals.activeDoodleID].logo.gmail.levelTwo" -->
+
+                      </mat-expansion-panel>
+
+                      <!-- gmail Doodle Decor -->
+                      <mat-expansion-panel *ngIf="local == 'ginbox'">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            OGB Doodle Decor
+                          </mat-panel-title>
+                          <mat-panel-description>
+
+                            <span
+                              style="width:80%;"
+                              class="nowrap">
+                              <span
+                                *ngIf="this.globals.gmailDecorNo"
+                                matTooltip="No Decor"
+                                [matTooltipPosition]="'right'">
+                                No Decor
+                              </span>
+                              <span
+                                *ngIf="this.globals.gmailDecorLevelOne"
+                                matTooltip="Light Decor"
+                                [matTooltipPosition]="'right'">
+                                Level One Decor
+                              </span>
+                              <span
+                                *ngIf="this.globals.gmailDecorLevelTwo"
+                                matTooltip="Medium One Decor"
+                                [matTooltipPosition]="'right'">
+                                Level Two Decor
+                              </span>
+                              <span
+                                *ngIf="this.globals.gmailDecorLevelThree"
+                                matTooltip="Medium Two Decor"
+                                [matTooltipPosition]="'right'">
+                                Level Three Decor
+                              </span>
+                              <span
+                                *ngIf="this.globals.gmailDecorLevelFour"
+                                matTooltip="Heavy Decor"
+                                [matTooltipPosition]="'right'">
+                                Level Four Decor
+                              </span>
+                            </span>
+
+                          </mat-panel-description>
+                        </mat-expansion-panel-header>
+
+                        <button
+                          mat-button
+                          (click)="changeGmailDecor('gmailDecorNo')"
+                          [class.active]="this.globals.gmailDecorNo">
+                          <span *ngIf="this.globals.gmailDecorNo">*</span>
+                          No Decor
+                        </button>
+
+                        <button
+                          mat-button
+                          (click)="changeGmailDecor('gmailDecorLevelOne')"
+                          [class.active]="this.globals.gmailSimpleToolbarDecor">
+                          <span *ngIf="this.globals.gmailDecorLevelOne">*</span>
+                          Level One Decor
+                        </button>
+
+                        <button
+                          disabled
+                          mat-button
+                          (click)="changeGmailDecor('gmailDecorLevelTwo')"
+                          [class.active]="this.globals.gmailElaborateToolbarDecor">
+                          <span *ngIf="this.globals.gmailDecorLevelTwo">*</span>
+                          Level Two Decor
+                        </button>
+
+                        <button
+                          disabled
+                          mat-button
+                          (click)="changeGmailDecor('gmailDecorLevelThree')"
+                          [class.active]="this.globals.gmailElaborateToolbarDecor">
+                          <span *ngIf="this.globals.gmailDecorLevelThree">*</span>
+                          Level Three Decor
+                        </button>
+
+                        <button
+                          disabled
+                          mat-button
+                          (click)="changeGmailDecor('gmailDecorLevelFour')"
+                          [class.active]="this.globals.gmailWholePageDecor">
+                          <span *ngIf="this.globals.gmailDecorLevelFour">*</span>
+                          Level Four Decor
+                        </button>
+
+                      </mat-expansion-panel>
+
+                      <!-- gmail searchBar Decor -->
+                      <mat-expansion-panel *ngIf="local == 'ginbox'">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Search Bar Color
+                          </mat-panel-title>
+                          <mat-panel-description>
+
+                            <span
+                              style="width:80%;"
+                              class="nowrap">
+                              <span
+                                *ngIf="this.globals.gmailSearchBarLevelOne"
+                                matTooltip="Light Decor"
+                                [matTooltipPosition]="'right'">
+                                Level One Decor
+                              </span>
+                              <span
+                                *ngIf="this.globals.gmailSearchBarLevelTwo"
+                                matTooltip="Medium One Decor"
+                                [matTooltipPosition]="'right'">
+                                Level Two Decor
+                              </span>
+                              <span
+                                *ngIf="this.globals.gmailSearchBarLevelThree"
+                                matTooltip="Medium Two Decor"
+                                [matTooltipPosition]="'right'">
+                                Level Three Decor
+                              </span>
+                              <span
+                                *ngIf="this.globals.gmailSearchBarLevelFour"
+                                matTooltip="Heavy Decor"
+                                [matTooltipPosition]="'right'">
+                                Level Four Decor
+                              </span>
+                            </span>
+
+                          </mat-panel-description>
+                        </mat-expansion-panel-header>
+
+                        <button
+                          mat-button
+                          (click)="changeGmailSearchBarColor('l1')"
+                          [class.active]="this.globals.gmailSearchBarLevelOne">
+                          <span *ngIf="this.globals.gmailSearchBarLevelOne">*</span>
+                          Standard (#f1f3f4)
+                        </button>
+
+                        <button
+                          mat-button
+                          (click)="changeGmailSearchBarColor('l2')"
+                          [class.active]="this.globals.gmailSearchBarLevelTwo">
+                          <span *ngIf="this.globals.gmailSearchBarLevelTwo">*</span>
+                          L2
+                        </button>
+
+                        <button
+                          mat-button
+                          (click)="changeGmailSearchBarColor('l3')"
+                          [class.active]="this.globals.gmailSearchBarLevelThree">
+                          <span *ngIf="this.globals.gmailSearchBarLevelThree">*</span>
+                          L3
+                        </button>
+
+                        <button
+                          mat-button
+                          (click)="changeGmailSearchBarColor('l4')"
+                          [class.active]="this.globals.gmailSearchBarLevelFour">
+                          <span *ngIf="this.globals.gmailSearchBarLevelFour">*</span>
+                          L4
+                        </button>
+
+                      </mat-expansion-panel>
+
+                      <mat-expansion-panel *ngIf="false && local == 'ginbox'">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            OGB interaction targets
+                          </mat-panel-title>
+                          <mat-panel-description>
+                            define behaviors
+                          </mat-panel-description>
+                        </mat-expansion-panel-header>
+
+
+
+
+                        <p>Brand Section & Product Controls</p>
+
+                        <button
+                          mat-raised-button
+                          (click)="this.globals.useNegativeOGBSpace = !this.globals.useNegativeOGBSpace"
+                          style="background:white; color:black;"
+                          >
+                          useNegativeOGBSpace
+                          <span *ngIf="this.globals.useNegativeOGBSpace">*</span>
+                          <span *ngIf="!this.globals.useNegativeOGBSpace">&nbsp;</span>
+                        </button>
+
+                        <!-- <p>Doodle info close behavior</p>
+
+                        <button
+                          mat-raised-button
+                          (mouseup)="this.globals.hoverLeaveClose = !this.globals.hoverLeaveClose"
+                          style="background:white; color:black;"
+                          >
+                          close on hover leave
+                          <span *ngIf="this.globals.hoverLeaveClose">*</span>
+                          <span *ngIf="!this.globals.hoverLeaveClose">&nbsp;</span>
+                        </button> -->
+
+                        <p>Sections</p>
+
+                        <div
+                          class=""
+                          style="display: flex; flex-wrap: wrap;"
+                          (mousedown)="this.globals.superInProductControlsSection = false; this.globals.superInGoogleControlsSection = false;"
+                          >
+                          <button
+                            mat-raised-button
+                            (mouseup)="this.globals.superInProductControlsSection = !this.globals.superInProductControlsSection"
+                            style="background:white; color:black; width: 50%;"
+                            >
+                            left
+                            <span *ngIf="this.globals.superInProductControlsSection">*</span>
+                            <span *ngIf="!this.globals.superInProductControlsSection">&nbsp;</span>
+                          </button>
+                          <button
+                            mat-raised-button
+                            (mouseup)="this.globals.superInGoogleControlsSection = !this.globals.superInGoogleControlsSection"
+                            style="background:white; color:black; width: 50%;"
+                            >
+                            right
+                            <span *ngIf="this.globals.superInGoogleControlsSection">*</span>
+                            <span *ngIf="!this.globals.superInGoogleControlsSection">&nbsp;</span>
+                          </button>
+
+                        </div>
+
+
+                        <p>click targets</p>
+
+                        <div
+                          (mousedown)="this.globals.seePencilVestor = false;this.globals.seeSuperD = false;this.globals.seeSuperG = false;this.globals.seeVideogameAsset=false;"
+                          style="display: flex; flex-wrap: wrap;"
+                          >
+
+                          <button
+                            mat-raised-button
+                            (mouseup)="this.globals.seePencilVestor = !this.globals.seePencilVestor"
+                            style="background:white; color:black; width: 50%;"
+                            >
+                            Pencil
+                            <span *ngIf="this.globals.seePencilVestor">*</span>
+                            <span *ngIf="!this.globals.seePencilVestor">&nbsp;</span>
+                          </button>
+                          <button
+                            mat-raised-button
+                            (mouseup)="this.globals.seeSuperG = !this.globals.seeSuperG"
+                            style="background:white; color:black; width: 50%;"
+                            >
+                            Super G
+                            <span *ngIf="this.globals.seeSuperG">*</span>
+                            <span *ngIf="!this.globals.seeSuperG">&nbsp;</span>
+                          </button>
+                          <button
+                            mat-raised-button
+                            (mouseup)="this.globals.seeSuperD = !this.globals.seeSuperD"
+                            style="background:white; color:black; width: 50%;"
+                            >
+                            Super D
+                            <span *ngIf="this.globals.seeSuperD">*</span>
+                            <span *ngIf="!this.globals.seeSuperD">&nbsp;</span>
+                          </button>
+                          <button
+                            mat-raised-button
+                            (mouseup)="this.globals.seeVideogameAsset = !this.globals.seeVideogameAsset"
+                            style="background:white; color:black; width: 50%;"
+                            >
+                            Interactive
+                            <span *ngIf="this.globals.seeVideogameAsset">*</span>
+                            <span *ngIf="!this.globals.seeVideogameAsset">&nbsp;</span>
+                          </button>
+
+                        </div>
+
+                      </mat-expansion-panel>
+
+                    </mat-accordion>
+
+
+
+                    <!-- <p>Notes: </p>
+
+                    <p style="font-size:0.8em;"><i>
+                      MOST INTERACTIONS ARE NOT BUILT.
+                      <br><br>This not the greatest page in the World, this is just a Prototype. This evolutionary prototype is meant to represent the design intent of Doodles / Doodle space / and other Doodle Delight at various levels of fidelity, it does not neccesarily represent intended user interaction in any given space - depends on each project.
+                      <br><br>All the data is fake. Some interactions are meant for visual display only. The GMail drawer interations are not true.
+                      <br><br>* These are example 'DOODLES' for the purpose of demonstration. Some are artifacts of past Doodles and some are merely concepts. None are intended as final design intent for deliverables.
+                      <br><br>For more on the Doodle program - visit <a  target="_blank" href="https://sites.google.com/a/google.com/doodles/">go/doodle</a>
+                    </i></p> -->
+
+                    <mat-divider></mat-divider>
+
+                    <p style="font-size:0.8em;">For now feedback can be sent directly to your POC or me: <a href="mailto:cliffordn@google.com">cliffordn@google.com</a></p>
+
+                    <!-- Notes -->
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Notes
+                        </mat-panel-title>
+                        <mat-panel-description>
+
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                      <p style="font-size:0.8em;"><i>
+                        MOST INTERACTIONS ARE NOT BUILT.
+                        <br><br>This not the greatest page in the World, this is just a Prototype. This evolutionary prototype is meant to represent the design intent of Doodles / Doodle space / and other Doodle Delight at various levels of fidelity, it does not neccesarily represent intended user interaction in any given space - depends on each project.
+                        <br><br>All the data is fake. Some interactions are meant for visual display only. The GMail drawer interations are not true.
+                        <br><br>* These are example 'DOODLES' for the purpose of demonstration. Some are artifacts of past Doodles and some are merely concepts. None are intended as final design intent for deliverables. Unless otherwise noted.
+                        <br><br>For more on the Doodle program - visit <a  target="_blank" href="https://sites.google.com/a/google.com/doodles/">go/doodle</a>
+                      </i></p>
+                    </mat-expansion-panel>

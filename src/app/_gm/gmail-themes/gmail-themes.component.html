@@ -1,0 +1,95 @@
+<div class="gmail-themes themes">
+
+  <mat-card>
+
+    <mat-card-header>
+
+      <mat-card-title>Pick your theme</mat-card-title>
+
+      <button
+        mat-icon-button
+        (click)="closeDialog()"
+        >
+        <mat-icon>close</mat-icon>
+      </button>
+
+    </mat-card-header>
+
+    <mat-card-content>
+
+      <section style="display: flex;flex-wrap: wrap;justify-content: space-around; padding: 1em 0;">
+
+        <button
+          *ngFor="let theme of this.gmailThemes; let i = index"
+          [disabled]="this.globals.gmailDoodleOptIn"
+          type="button"
+          name="button"
+          mat-menu-item
+          (click)="this.globals.gmailThemeId = i; $event.stopPropagation();"
+          class="theme theme-option-button"
+          style="
+            flex: 1 0 21%;
+            margin: 1em;
+            background: rgba(255,0,0,0.1);
+            padding: 0;
+            height: 110px;
+            width: 180px;
+            "
+          >
+
+          <img [src]="theme.thumbNail.url" alt="">
+          <span class="theme__popover">{{theme.name}}</span>
+        </button>
+
+      </section>
+
+      <!-- <mat-divider></mat-divider>
+
+      <section
+        style="flex-direction: column;"
+        >
+
+        <button
+          type="button"
+          name="button"
+          mat-menu-item
+          (click)="$event.stopPropagation();optInOut();">
+          <mat-icon *ngIf="this.globals.gmailDoodleOptIn">check_circle</mat-icon>
+          <mat-icon *ngIf="!this.globals.gmailDoodleOptIn">check_circle_outline</mat-icon>
+          Doodle + Default Theme (FPO)
+        </button>
+
+        <button
+          type="button"
+          name="button"
+          mat-menu-item
+          disabled
+          (click)="$event.stopPropagation();optInOut();">
+          <mat-icon *ngIf="this.globals.gmailDoodleOptIn">check_circle</mat-icon>
+          <mat-icon *ngIf="!this.globals.gmailDoodleOptIn">check_circle_outline</mat-icon>
+          Doodle + Interupt my custom theme for the Doodle (FPO)
+        </button>
+
+
+
+
+      </section> -->
+
+    </mat-card-content>
+
+    <mat-card-actions>
+
+      <button mat-button>My Photos</button>
+
+
+
+      <span>
+        <button mat-button>Cancel</button>
+        <button mat-button>Save</button>
+      </span>
+
+    </mat-card-actions>
+
+  </mat-card>
+
+</div>

@@ -1,0 +1,95 @@
+@import "../../../variables.scss";
+
+:host {
+
+  mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    height: 40px;
+
+    &.top {
+      background: #4B4B4B;
+      color: white;
+      width: calc(100% + 36px);
+      margin-top: -0.5em;
+      margin-left: -1em;
+      margin-right: -1em;
+    }
+    &.bottom {
+      color: $color-grey;
+      box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.2);
+      border-radius: 2px;
+      background: white;
+      margin-bottom: 1em;
+    }
+
+  }
+
+  .form {
+    color: $color-grey;
+    p {
+      color: inherit;
+      margin: 0.5em 0;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+}
+  .full-doodle {
+    cursor: pointer;
+    outline: none;
+  }
+
+.share-card {
+  max-width: 544px;
+  margin: 0 auto;
+  max-height: 40vh;
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.carousel {
+
+  display: flex;
+  overflow: scroll;
+  width: calc(100% + 2em);
+  margin-left: -1em;
+  margin-right: -1em;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+  }
+
+  img {
+    height: 256px;
+    margin: 1em;
+    border-radius: 1em;
+    box-shadow: -1px 1px 4px 1px rgba(0,0,0,0.2);
+  }
+}

@@ -1,0 +1,28 @@
+@import "../../../variables.scss";
+
+.srp__logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: calc(150px - 16px);
+
+  transform: translateY(4px);
+
+  @include lg {
+    transform: translateY(0);
+  }
+
+  > img {
+    // position: absolute;
+    // left: -150px;
+    // padding-left: 13px;
+    outline: none;
+    margin-right: 12px;
+    // top: 4px;
+    &:focus {
+      outline: none;
+    }
+  }
+}

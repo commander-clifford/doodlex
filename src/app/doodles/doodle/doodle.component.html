@@ -1,0 +1,66 @@
+<div
+  class="doodle {{doodleType.logo.gmail.levelTwo.name | lowercase}}"
+  [style.width]="doodleType.logo.gmail.levelTwo.width + 'px'"
+  [style.height]="doodleType.logo.gmail.levelTwo.height + 'px'"
+  >
+
+  <img
+    *ngIf="globals.gmailDoodleNo && globals.gmailDoodleStandardColor"
+    alt="Google {{doodleType.logo.gmail.no.standard.name}} Doodle"
+    height="{{doodleType.logo.gmail.no.standard.height}}"
+    width="{{doodleType.logo.gmail.no.standard.width}}"
+    src="{{doodleType.logo.gmail.no.standard.url}}"
+  />
+  <img
+    *ngIf="globals.gmailDoodleNo && globals.gmailDoodleAlternativeColor"
+    alt="Google {{doodleType.logo.gmail.no.alternative.name}} Doodle"
+    height="{{doodleType.logo.gmail.no.alternative.height}}"
+    width="{{doodleType.logo.gmail.no.alternative.width}}"
+    src="{{doodleType.logo.gmail.no.alternative.url}}"
+  />
+
+
+
+  <img
+    *ngIf="globals.gmailDoodleLevelOne && globals.gmailDoodleStandardColor"
+    alt="Google {{doodleType.logo.gmail.levelOne.standard.name}} Doodle"
+    height="{{doodleType.logo.gmail.levelOne.standard.height}}"
+    width="{{doodleType.logo.gmail.levelOne.standard.width}}"
+    src="{{doodleType.logo.gmail.levelOne.standard.url}}"
+    [ngStyle]="doodleType.logo.gmail.levelOne.standard.style"
+  />
+  <img
+    *ngIf="globals.gmailDoodleLevelOne && globals.gmailDoodleAlternativeColor"
+    alt="Google {{doodleType.logo.gmail.levelOne.alternative.name}} Doodle"
+    height="{{doodleType.logo.gmail.levelOne.alternative.height}}"
+    width="{{doodleType.logo.gmail.levelOne.alternative.width}}"
+    src="{{doodleType.logo.gmail.levelOne.alternative.url}}"
+    [ngStyle]="doodleType.logo.gmail.levelOne.alternative.style"
+  />
+
+
+
+
+
+
+
+
+  <img
+    *ngIf="globals.gmailDoodleLevelTwo"
+    alt="Google {{doodleType.logo.gmail.levelTwo.name}} Doodle"
+    height="{{doodleType.logo.gmail.levelTwo.height}}"
+    width="{{doodleType.logo.gmail.levelTwo.width}}"
+    src="{{doodleType.logo.gmail.levelTwo.url}}"
+
+  />
+
+</div>
+
+
+<!-- routerLink="/results/{{doodleType.triggers[0]}}" -->
+<!-- routerLink="/results/{{doodleType.triggers[0]}}" -->
+<!-- routerLink="/results/{{doodleType.triggers[0]}}" -->
+
+<!-- (click)="clickDoodle()" -->
+<!-- (click)="clickDoodle()" -->
+<!-- (click)="clickDoodle()" -->

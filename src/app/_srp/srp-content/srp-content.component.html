@@ -1,0 +1,91 @@
+<div class="srp__results clearfix">
+
+  <br>
+
+  <!-- TODO: Make this it's own component -->
+  <div *ngIf="!this.globals.isMobileResolution" class="results-count">
+    <div>
+      <div>
+        About 906,000 results<span> (0.27 seconds)&nbsp;</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Left Side -->
+  <div class="srp__left">
+
+    <div
+      *ngIf="this.selectedSearchResults.scibox"
+      class="stagger-in component-spacing">
+      <app-srp-scibox></app-srp-scibox>
+    </div>
+
+    <div
+      *ngIf="this.selectedSearchResults.funbox"
+      class="stagger-in component-spacing">
+      <app-srp-funbox></app-srp-funbox>
+    </div>
+
+    <div *ngIf="this.globals.isMobileResolution">
+
+      <div *ngIf="this.selectedSearchResults.knowledgePanel">
+        <app-srp-knowledge-panel></app-srp-knowledge-panel>
+      </div>
+
+    </div>
+
+    <div
+      *ngIf="this.selectedSearchResults.searchSuggestions"
+      class="stagger-in component-spacing">
+      <app-srp-abstract></app-srp-abstract>
+    </div>
+
+    <div
+      *ngIf="this.selectedSearchResults.searchSuggestions"
+      class="stagger-in component-spacing">
+      <app-srp-search-suggestions></app-srp-search-suggestions>
+      <br>
+    </div>
+
+    <div
+      *ngIf="this.selectedSearchResults.topStories"
+      class="stagger-in component-spacing">
+      <app-srp-top-stories></app-srp-top-stories>
+    </div>
+
+    <div
+      *ngIf="true"
+      class="stagger-in component-spacing">
+      <app-srp-results-list></app-srp-results-list>
+    </div>
+
+  </div>
+
+  <!-- Right Side -->
+  <div
+    class="srp__right"
+    *ngIf="!this.globals.isMobileResolution"
+    >
+
+    <!-- TODO: Build custom slideshow -->
+    <!-- SRP Doodle Archive -->
+    <mat-card *ngIf="false" class="component-spacing">
+
+      <slideshow
+        *ngIf="archiveUrls"
+        class="doodle-archive"
+        [height]="'140px'"
+        [backgroundSize]="'contain'"
+        [autoPlay]="false"
+        [imageUrls]="archiveUrls">
+      </slideshow>
+
+    </mat-card>
+
+    <div *ngIf="this.selectedSearchResults.knowledgePanel">
+      <app-srp-knowledge-panel></app-srp-knowledge-panel>
+    </div>
+
+  </div>
+
+</div>

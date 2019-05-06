@@ -1,0 +1,206 @@
+
+<div class="share-component">
+
+  <button
+    class="floating-close-button"
+    cdkFocusInitial
+    (click)="closeCompose()"
+    mat-icon-button>
+    <mat-icon>close</mat-icon>
+  </button>
+
+
+<mat-toolbar
+  *ngIf="false"
+  [style.backgroundColor]="this.doodletypes[this.globals.activeDoodleID].styles.gmail.primaryColor">
+  <div class="" style="font-weight: 400;font-size: 12px;font-family: roboto;">
+    Google Doodle (doodle-sheet)
+  </div>
+  <div class="">
+    <!-- <button
+
+      (click)="openCompose()"
+      mat-button>
+      <mat-icon>add</mat-icon> Compose
+    </button> -->
+    <!-- <button
+      (click)="openSocialShare()"
+      mat-icon-button>
+      <mat-icon>share</mat-icon>
+    </button> -->
+    <button
+      cdkFocusInitial
+      (click)="closeCompose()"
+      mat-icon-button>
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<!-- [ngStyle]="this.globals.gmailDecorLevelOne ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelOne.content : this.globals.gmailDecorLevelTwo ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelTwo.content : this.globals.gmailDecorLevelThree ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelThere.content : this.globals.gmailDecorLevelFour ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelFour.content : null" -->
+
+<mat-card
+  [ngStyle]="this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelTwo.content"
+  class="share-card"
+  >
+
+  <!-- <mat-card-header>
+    <mat-card-title>
+      <h1 [innerHtml]="doodle.name"></h1>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <p [innerHtml]="doodle.desc"></p>
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-divider></mat-divider> -->
+
+  <br><br>
+
+  <div class="doodle-wrapper">
+
+    <button
+      [matMenuTriggerFor]="shareMenu"
+      mat-icon-button>
+      <mat-icon>share</mat-icon>
+    </button>
+
+    <!-- <a
+      routerLink="/results/{{doodle.triggers[0]}}"
+      [queryParams]="{ activeDoodleID: doodle.id }"
+      target="_blank"> -->
+      <img
+        class="full-doodle"
+        [src]="doodle.logo.standard.url"
+        alt="alt text"
+      />
+    <!-- </a> -->
+
+  </div>
+
+  <mat-menu #shareMenu="matMenu" yPosition="above">
+
+    <button mat-menu-item>
+      <mat-icon>mood</mat-icon>
+      <span>FaceBook</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>mood</mat-icon>
+      <span>Twitter</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>file_copy</mat-icon>
+      <span>Copy</span>
+    </button>
+    <a
+      mat-menu-item
+      routerLink="/results/{{doodle.triggers[0]}}"
+      [queryParams]="{ activeDoodleID: doodle.id }"
+      target="_blank">
+      <mat-icon>search</mat-icon>
+      <span>Search</span>
+    </a>
+    <button
+      (click)="openCompose()"
+      mat-menu-item>
+      <mat-icon>add</mat-icon> Compose
+    </button>
+
+  </mat-menu>
+
+
+  <br><br>
+
+  <!-- <div class="carousel">
+    <img *ngFor="let img of doodle.imgs" [src]="img.url" [alt]="img.alt" [height]="img.height" [width]="img.width">
+
+  </div> -->
+
+  <!-- <mat-divider></mat-divider> -->
+
+  <mat-card-content>
+    <h1 [innerHtml]="doodle.name"></h1>
+    <p [innerHtml]="doodle.desc"></p>
+    <hr>
+    <p [innerHtml]="doodle.scribble"></p>
+  </mat-card-content>
+
+  <!-- <mat-divider></mat-divider> -->
+
+  <mat-card-actions *ngIf="false" [style.color]="this.doodletypes[this.globals.activeDoodleID].styles.gmail.primaryColor">
+    <span></span>
+    <span>
+
+      <!-- (click)="openSocialShare()" -->
+      <button
+        [matMenuTriggerFor]="shareMenu"
+        mat-icon-button>
+        <mat-icon>share</mat-icon>
+      </button>
+
+      <!-- <mat-menu
+        #shareMenu="matMenu"
+        yPosition="above"
+        >
+        <button mat-menu-item (click)="openCompose()"><mat-icon>add</mat-icon> Compose</button>
+        <button mat-menu-item>FaceBook</button>
+        <button mat-menu-item>Twitter</button>
+        <button mat-menu-item>Search</button>
+      </mat-menu> -->
+
+      <mat-menu #shareMenu="matMenu" yPosition="above">
+        <button mat-menu-item (click)="openCompose()">
+          <mat-icon>add</mat-icon>
+          <span>Compose</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>mood</mat-icon>
+          <span>FaceBook</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>mood</mat-icon>
+          <span>Twitter</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>file_copy</mat-icon>
+          <span>Copy</span>
+        </button>
+        <!-- <a
+          mat-menu-item
+          routerLink="/results/{{doodle.triggers[0]}}"
+          [queryParams]="{ activeDoodleID: doodle.id }"
+          target="_blank">
+
+            <mat-icon>search</mat-icon>
+            <span>Search</span>
+
+        </a> -->
+
+      </mat-menu>
+
+
+
+
+
+
+
+
+
+
+      <a
+        routerLink="/results/{{doodle.triggers[0]}}"
+        [queryParams]="{ activeDoodleID: doodle.id }"
+        target="_blank"
+        [style.color]="this.doodletypes[this.globals.activeDoodleID].styles.gmail.primaryColor">
+        <button
+          mat-icon-button>
+          <mat-icon>search</mat-icon>
+        </button>
+      </a>
+    </span>
+ </mat-card-actions>
+
+</mat-card>
+
+
+</div>

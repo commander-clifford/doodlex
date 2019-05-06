@@ -1,0 +1,26 @@
+::ng-deep {
+  .social-share-modal {
+    .mat-dialog-container {
+      border-radius: 1em;
+    }
+  }
+}
+
+button[mat-menu-item] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-right: 6em;
+}
+
+
+[mat-dialog-title] {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    margin: 0;
+  }
+}

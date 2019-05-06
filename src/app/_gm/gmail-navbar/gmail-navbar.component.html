@@ -1,0 +1,29 @@
+<div
+  class=""
+  [style.color]="this.gmailThemes[this.globals.gmailThemeId].primaryColor"
+  >
+  <!-- [ngStyle]="this.globals.gmailDecorLevelOne ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelOne.sidebar : this.globals.gmailDecorLevelTwo ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelTwo.sidebar : this.globals.gmailDecorLevelThree ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelThere.sidebar : this.globals.gmailDecorLevelFour ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelFour.sidebar : null" -->
+
+  <button mat-button cdkFocusInitial focus class="active"
+    [style.color]="this.gmailThemes[this.globals.gmailThemeId].primaryColor"
+    >
+    <mat-icon>inbox</mat-icon> Inbox
+  </button>
+
+  <button mat-button>
+    <mat-icon>star</mat-icon> Starred
+  </button>
+
+  <button mat-button>
+    <mat-icon>access_time</mat-icon> Snoozed
+  </button>
+
+  <button mat-button>
+    <mat-icon>send</mat-icon> Sent
+  </button>
+
+  <button mat-button>
+    <mat-icon>drafts</mat-icon> Drafts
+  </button>
+
+</div>

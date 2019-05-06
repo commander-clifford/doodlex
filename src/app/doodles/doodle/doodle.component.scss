@@ -1,0 +1,16 @@
+@import "../../../variables.scss";
+
+:host {
+  cursor: pointer;
+}
+.doodle {
+
+  display: flex;
+  align-items: center;
+
+  img {
+    outline: none;
+    cursor: pointer;
+  }
+
+}

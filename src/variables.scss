@@ -1,0 +1,50 @@
+// @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+// @import "~@angular/material/prebuilt-themes/purple-green.css";
+
+@import url('https://fonts.googleapis.com/css?family=Life+Savers:700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Google+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+@import "mixins.scss";
+
+$color-red: #DD0031;
+$color-dark-red: darken($color-red,15%);
+$color-light-red: lighten($color-red,15%);
+
+$color-white: #FFFFFF;
+$color-dark-white: darken($color-white,15%);
+$color-light-white: lighten($color-white,15%);
+
+$color-black: #000000;
+$color-grey: lighten($color-black, 45%);
+
+
+// gmail colors
+$color-gmail-blue: #1a73e8;
+$color-gmail-green: #208f40;
+$color-gmail-yellow: #f08c02;
+
+@mixin resultCard() {
+  margin: 0 0 0.5em 0;
+}
+
+// Small
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 1140px;
+
+
+// Large
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+$screen-xxl-min: 1280px;

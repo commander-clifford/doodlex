@@ -1,0 +1,18 @@
+:host {
+  display: block;
+
+  .homepage-categories {
+    display: flex;
+    justify-content: space-between;
+
+    &__category {
+      display: block;
+      width: 25%;
+      text-align: center;
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 14px;
+      color: rgba(0, 0, 0, .54);
+    }
+  }
+}

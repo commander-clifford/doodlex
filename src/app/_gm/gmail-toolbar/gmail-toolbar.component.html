@@ -1,0 +1,203 @@
+<div style="
+    position: absolute;
+    right: 70px;
+    top: 50px;
+    text-indent: -9999px;
+    visibility: hidden;
+    "
+    class="" id="tri" [matMenuTriggerFor]="doodleInfo" (menuOpened)="menuOpened()" (menuClosed)="menuClosed()">
+  tri
+</div>
+  <!-- [style.color]="this.doodletypes[this.globals.activeDoodleID].styles.gmail.primaryColor && this.globals.activeDoodleTheme == true ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.primaryColor : this.gmailThemes[this.globals.gmailThemeId].primaryColor" -->
+<mat-toolbar
+  class="gmail gmail-toolbar"
+
+
+
+
+
+  [ngStyle]="
+    this.globals.gmailDecorLevelOne ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelOne.toolbar :
+    this.globals.gmailDecorLevelTwo ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelTwo.toolbar :
+    this.globals.gmailDecorLevelThree ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelThere.toolbar :
+    this.globals.gmailDecorLevelFour ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelFour.toolbar : null"
+  >
+
+  <!-- [matTooltip]="'Google Doodle (FPO) \n  '+this.doodletypes[this.globals.activeDoodleID].promo" -->
+  <!-- [matMenuTriggerFor]="doodleInfo_2" -->
+
+  <div class="left">
+
+    <button
+      mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <div class="doodle">
+      <a
+        routerLink="/gmail/"
+        [queryParams]="{ doodleID: this.globals.activeDoodleID }"
+        >
+        <app-doodle
+          [doodleType]="doodletypes[globals.activeDoodleID]"
+          [client]="'gmail'"
+          >
+        </app-doodle>
+      </a>
+    </div>
+
+    <span
+      *ngIf="this.doodletypes[this.globals.activeDoodleID].isDoodle && this.globals.useNegativeOGBSpace"
+      [matMenuTriggerFor]="doodleInfo"
+      [matTooltip]="this.doodletypes[this.globals.activeDoodleID].intro"
+      matTooltipShowDelay="600"
+      matTooltipHideDelay="200"
+      matTooltipPosition="above"
+      [matTooltipClass]="'doodle-tip tight ' + this.doodletypes[this.globals.activeDoodleID].name | lowercase"
+      class="clickable_area"
+      (menuOpened)="menuOpened()"
+      (menuClosed)="menuClosed()"
+      >
+    </span>
+
+  </div>
+
+  <div class="middle" style="flex: 1 1 auto; display:flex; align-items: center;">
+    <div class="gmail-toolbar__input-wrap input-wrap" [ngStyle]="
+      this.globals.gmailSearchBarNo ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelNo.searchBar :
+      this.globals.gmailSearchBarLevelOne ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelOne.searchBar :
+      this.globals.gmailSearchBarLevelTwo ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelTwo.searchBar :
+      this.globals.gmailSearchBarLevelThree ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelThere.searchBar :
+      this.globals.gmailSearchBarLevelFour ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelFour.searchBar : null">
+      <mat-icon style="position: absolute;top: 13px;left: 14px;">search</mat-icon>
+      <!-- [style.color]="
+        this.doodletypes[this.globals.activeDoodleID].styles.gmail.primaryColor ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.primaryColor : this.gmailThemes[this.globals.gmailThemeId].primaryColor" -->
+        <!-- [style.background]="
+          this.globals.activeDoodleID != 0 ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelOne.searchBar :
+          this.globals.gmailThemeId ? this.gmailThemes[this.globals.gmailThemeId].primaryColorClear : null
+        " -->
+      <input
+        class="gmail-toolbar__search-bar"
+        tabindex="1"
+        placeholder="Search mail"
+      />
+      <mat-icon style="position: absolute;top: 13px;right: 14px;">arrow_drop_down</mat-icon>
+    </div>
+
+    <!-- <app-super
+
+      class="super"
+      *ngIf="this.globals.superInProductControlsSection && this.doodletypes[this.globals.activeDoodleID].isDoodle"
+      [matTooltip]="this.doodletypes[this.globals.activeDoodleID].intro"
+      matTooltipShowDelay="600"
+      matTooltipHideDelay="200"
+      [matMenuTriggerFor]="doodleInfo"
+      (menuOpened)="menuOpened()"
+      (menuClosed)="menuClosed()"
+      >
+    </app-super> -->
+
+    <div
+      *ngIf="this.doodletypes[this.globals.activeDoodleID].isDoodle && this.globals.useNegativeOGBSpace"
+      [matMenuTriggerFor]="doodleInfo"
+      [matTooltip]="this.doodletypes[this.globals.activeDoodleID].intro"
+      matTooltipShowDelay="600"
+      matTooltipHideDelay="200"
+      matTooltipPosition="above"
+      [matTooltipClass]="'doodle-tip tight ' + this.doodletypes[this.globals.activeDoodleID].name | lowercase"
+      class="clickable_area auto"
+      style="cursor: pointer;"
+      (menuOpened)="menuOpened()"
+      (menuClosed)="menuClosed()"
+      >
+    </div>
+
+    <div
+    *ngIf="this.doodletypes[this.globals.activeDoodleID].isDoodle && !this.globals.useNegativeOGBSpace"
+    class="clickable_area auto">
+    </div>
+
+    <div
+      *ngIf="!this.doodletypes[this.globals.activeDoodleID].isDoodle"
+      class="clickable_area auto">
+    </div>
+
+    <button
+      matTooltip="Support"
+      matTooltipShowDelay="600"
+      matTooltipHideDelay="200"
+      mat-icon-button>
+      <mat-icon>help</mat-icon>
+    </button>
+
+  </div>
+
+  <div class="right google-controls">
+
+    <button
+      matTooltip="Apps"
+      matTooltipShowDelay="600"
+      matTooltipHideDelay="200"
+      (click)="prototypeClick('Apps');"
+      mat-icon-button
+      >
+      <mat-icon aria-label="Apps Icon">apps</mat-icon>
+    </button>
+
+    <!-- <app-super
+
+      *ngIf="this.globals.superInGoogleControlsSection && this.doodletypes[this.globals.activeDoodleID].isDoodle"
+      [matMenuTriggerFor]="doodleInfo"
+      [matTooltip]="this.doodletypes[this.globals.activeDoodleID].intro"
+      matTooltipShowDelay="600"
+      matTooltipHideDelay="200"
+      (menuOpened)="menuOpened()"
+      (menuClosed)="menuClosed()"
+      >
+    </app-super> -->
+
+    <button
+      matTooltip="Account settings"
+      matTooltipShowDelay="600"
+      matTooltipHideDelay="200"
+      (click)="prototypeClick('Account');"
+      mat-icon-button
+      >
+      <mat-icon>account_circle</mat-icon>
+    </button>
+
+  </div>
+
+
+
+  <mat-menu
+    [overlapTrigger]="false"
+    #doodleInfo="matMenu"
+    class="custom"
+    xPosition="after"
+    yPosition="above"
+
+    [overlapTrigger]="false">
+    <span *ngIf="this.globals.hoverLeaveClose" [matMenuTriggerFor]="doodleInfo" #doodleInfoTrigger="matMenuTrigger" (mouseleave)="doodleInfoTrigger.closeMenu()">
+    <!-- panelClass="matmenuclass"
+    yPosition="below"
+    [overlapTrigger]="true"
+    [hasBackdrop]="true" -->
+    <app-share
+      *ngIf="this.doodletypes[this.globals.activeDoodleID].isDoodle"
+      >
+    </app-share>
+    </span>
+
+    <span *ngIf="!this.globals.hoverLeaveClose">
+      <app-share
+        *ngIf="this.doodletypes[this.globals.activeDoodleID].isDoodle"
+        >
+      </app-share>
+    </span>
+
+  </mat-menu>
+
+
+
+  </mat-toolbar>

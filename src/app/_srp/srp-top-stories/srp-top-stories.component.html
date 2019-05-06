@@ -1,0 +1,38 @@
+<div class="top-stories">
+
+  <h3 class="top-stories__headline">Top stories</h3>
+
+  <div class="top-stories__cards flex">
+
+    <mat-card *ngFor="let ts of selectedResult.topStories" class="top-stories__card">
+
+      <img
+        class="top-stories__img"
+        mat-card-image
+
+        src="{{ts.img}}"
+        alt="">
+
+      <mat-card-header>
+        <mat-card-title>{{ts.title}}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-card-subtitle>{{ts.source}}</mat-card-subtitle>
+        <mat-card-subtitle>{{ts.age}}</mat-card-subtitle>
+      </mat-card-content>
+
+    </mat-card>
+
+  </div>
+
+  <p class="top-stories__more-link fine_print flex flex-align-center">
+    <mat-icon class="rp">arrow_forward</mat-icon>
+    &nbsp;
+    &nbsp;
+    <a (click)="prototypeClick('More link');">
+      More from {{selectedResult.name}}
+    </a>
+  </p>
+
+</div>

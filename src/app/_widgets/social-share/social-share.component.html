@@ -1,0 +1,23 @@
+<div mat-dialog-title>
+  <p>Share</p>
+  <button (click)="this.dialogRef.close()" mat-icon-button cdkFocusInitial type="button" name="button"><mat-icon>close</mat-icon></button>
+</div>
+
+<div mat-dialog-content>
+  <button mat-menu-item>
+    <img src="./assets/fb_32x32.png" alt="" [style.marginRight]="'1em'">
+    <span>FaceBook</span>
+  </button>
+  <button mat-menu-item>
+    <img src="./assets/twitter_32x32.png" alt="" [style.marginRight]="'1em'">
+    <span>Twitter</span>
+  </button>
+  <button mat-menu-item
+    (click)="openCompose()">
+    <img src="./assets/email_grey600_24dp.png" alt="" [style.marginRight]="'1em'">
+    <span>Email</span>
+  </button>
+  <button mat-menu-item>
+    <span>Click to copy link</span>
+  </button>
+</div>

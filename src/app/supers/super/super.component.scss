@@ -1,0 +1,51 @@
+.super {
+  // animation: spin 2000ms 1000ms cubic-bezier(.36,.07,.19,.97) both;
+  background: rgba(255,0,255,0.6);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  &:hover {
+    background: rgba(255,0,255,0.8);
+    // animation: wiggle 1000ms cubic-bezier(.36,.07,.19,.97) both;
+  }
+}
+
+
+
+
+
+
+@keyframes wiggle {
+  10%, 90% {
+    transform: translate3d(0, -1px, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(0, 2px, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(0, -4px, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(0, 4px, 0);
+  }
+}
+@keyframes spin {
+  10%, 90% {
+    transform: rotate(-10deg);
+  }
+
+  20%, 80% {
+    transform: rotate(20deg);
+  }
+
+  30%, 50%, 70% {
+    transform: rotate(-40deg);
+  }
+
+  40%, 60% {
+    transform: rotate(40deg);
+  }
+}

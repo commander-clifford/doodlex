@@ -1,0 +1,384 @@
+<div class="gmail">
+  <div [ngClass]="{'device device-google-pixel-2-xl' : this.globals.useMobileDeviceFrame}">
+    <div [ngClass]="{'device-frame' : this.globals.useMobileDeviceFrame}">
+
+      <mat-sidenav-container class="main">
+
+              <mat-sidenav
+                class="gmail__drawer"
+                opened="false"
+                #gmailDrawer
+                [mode]="'over'"
+                [fixedInViewport]="true">
+                <app-gmail-drawer></app-gmail-drawer>
+
+              </mat-sidenav>
+
+              <mat-sidenav-content>
+                <!-- style="background:white;" -->
+
+                  <div class="gmail__content"
+                    [ngStyle]="this.globals.gmailDecorLevelOne ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelOne.content : this.globals.gmailDecorLevelTwo ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelTwo.content : this.globals.gmailDecorLevelThree ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelThere.content : this.globals.gmailDecorLevelFour ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelFour.content : null"
+                    [style.padding]="!this.globals.isMobileResolution ? 0 : null"
+                    [style.minHeight]="!this.globals.isMobileResolution ? '100vh' : null"
+                  >
+
+                    <app-gmail-toolbar *ngIf="!this.globals.isMobileResolution"></app-gmail-toolbar>
+                    <app-gmail-toolbar-mobile *ngIf="this.globals.isMobileResolution"></app-gmail-toolbar-mobile>
+
+                    <!-- Gmail Doodle Decor - Page -->
+                    <mat-sidenav-container [style.top]="this.globals.isMobileResolution ? '0px' : '0px'" class="child sidenav-container">
+
+                      <mat-sidenav class="sidenav" mode="side" [opened]="!this.globals.isMobileResolution">
+
+                        <button (click)="openBottomSheet()" mat-button class="compose-button">
+                          <mat-icon>add</mat-icon> Compose
+                        </button>
+
+                        <app-gmail-navbar></app-gmail-navbar>
+
+                      </mat-sidenav>
+
+                      <mat-sidenav-content class="sidenav-content">
+
+                        <button
+                          *ngIf="this.globals.isMobileResolution"
+                          class="mobile-compose-button"
+                          mat-fab
+                          type="button"
+                          >
+                          <mat-icon>add</mat-icon>
+                        </button>
+
+                        <!-- Mobile Content -->
+
+                        <div *ngIf="this.globals.isMobileResolution" class="mobile">
+
+                          <p class="category__title">Primary</p>
+
+                          <mat-accordion>
+
+                            <mat-expansion-panel>
+                              <mat-expansion-panel-header>
+                                <mat-icon>group</mat-icon>
+                                <mat-panel-title>
+                                  Social
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                  YouTube
+                                </mat-panel-description>
+                              </mat-expansion-panel-header>
+                              --
+                            </mat-expansion-panel>
+
+                            <mat-expansion-panel>
+                              <mat-expansion-panel-header>
+                                <mat-icon>bookmark_border</mat-icon>
+                                <mat-panel-title>
+                                  Promotions
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                  Think with Google
+                                </mat-panel-description>
+                              </mat-expansion-panel-header>
+                              --
+                            </mat-expansion-panel>
+
+                            <mat-expansion-panel>
+                              <mat-expansion-panel-header>
+                                <mat-icon>info</mat-icon>
+                                <mat-panel-title>
+                                  Updates
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                  Google Play
+                                </mat-panel-description>
+                              </mat-expansion-panel-header>
+                              --
+                            </mat-expansion-panel>
+
+                            <mat-expansion-panel>
+                              <mat-expansion-panel-header>
+                                <mat-icon>account_circle</mat-icon>
+                                <mat-panel-title>
+                                  Salit Kulla
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                  Trip to Yosemite
+                                  <!-- <p>Can you share your pictures from...</p> -->
+                                </mat-panel-description>
+                              </mat-expansion-panel-header>
+                              --
+                            </mat-expansion-panel>
+
+                          </mat-accordion>
+
+                        </div>
+
+                        <!-- / Mobile Content -->
+
+
+                        <!-- DT Content -->
+
+                        <div *ngIf="!this.globals.isMobileResolution" class="gmail-desktop-content">
+
+                          <mat-toolbar>
+
+                            <span [style.color]="this.gmailThemes[this.globals.gmailThemeId].secondaryColor">
+
+                              <button mat-icon-button [style.marginRight.px]="12">
+                                <mat-icon>check_box_outline_blank</mat-icon>
+                              </button>
+                              <button mat-icon-button [style.marginRight.px]="12">
+                                <mat-icon>refresh</mat-icon>
+                              </button>
+                              <button mat-icon-button [style.marginRight.px]="12">
+                                <mat-icon>more_vert</mat-icon>
+                              </button>
+
+                            </span>
+
+                            <span class="example-fill-remaining-space"></span>
+
+                            <span [style.color]="this.gmailThemes[this.globals.gmailThemeId].secondaryColor">
+                              <button
+                                mat-icon-button
+                                >
+                                <mat-icon>keyboard_arrow_left</mat-icon>
+                              </button>
+                              <button
+                                mat-icon-button
+                                >
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                              </button>
+                              <button
+                                mat-icon-button
+                                [style.marginLeft.px]="12"
+                                [matMenuTriggerFor]="gmailSettings"
+                                [style.color]="this.gmailThemes[this.globals.gmailThemeId].primaryColor"
+                                >
+                                <mat-icon>settings</mat-icon>
+                              </button>
+
+                              <mat-menu
+                                backdropClass="ccustom"
+                                #gmailSettings="matMenu"
+                                yPosition="below"
+                                >
+
+                                <button
+                                  disabled
+                                  mat-menu-item
+                                  >
+                                  Display Density
+                                </button>
+
+                                <!----------------><mat-divider></mat-divider><!---------------->
+
+                                <button
+                                  disabled
+                                  mat-menu-item
+                                  >
+                                  Configure Inbox
+                                </button>
+
+                                <!----------------><mat-divider></mat-divider><!---------------->
+
+                                <button
+                                  disabled
+                                  mat-menu-item
+                                  >
+                                  Settings
+                                </button>
+
+                                <button
+
+                                  (click)="openDialog()"
+                                  mat-menu-item
+                                  >
+                                  Themes
+                                </button>
+                                <!-- [matMenuTriggerFor]="gmailSettingsTheme" -->
+
+                                <!----------------><mat-divider></mat-divider><!---------------->
+
+                                <button
+                                  disabled
+                                  mat-menu-item
+                                  >
+                                  Get add-ons
+                                </button>
+
+                                <!----------------><mat-divider></mat-divider><!---------------->
+
+                                <button
+                                  disabled
+                                  mat-menu-item
+                                  >
+                                  Send feddback
+                                </button>
+
+                                <button
+                                  disabled
+                                  mat-menu-item
+                                  >
+                                  Report bug
+                                </button>
+
+                                <button
+                                  disabled
+                                  mat-menu-item
+                                  >
+                                  Help
+                                </button>
+
+                              </mat-menu>
+
+                              <mat-menu #gmailSettingsTheme="matMenu" >
+                                <button
+                                  type="button"
+                                  name="button"
+                                  mat-menu-item
+                                  (click)="
+                                    $event.stopPropagation();
+                                    this.globals.gmailDoodleOptIn = !this.globals.gmailDoodleOptIn;
+                                    "
+                                  >
+                                  <mat-icon *ngIf="this.globals.gmailDoodleOptIn">check_circle</mat-icon>
+                                  <mat-icon *ngIf="!this.globals.gmailDoodleOptIn">check_circle_outline</mat-icon>
+                                  Doodle
+                                </button>
+                                <div *ngIf="true" class="">
+                                  <button
+                                    *ngFor="let theme of this.gmailThemes; let i = index"
+                                    [disabled]="this.globals.gmailDoodleOptIn"
+                                    type="button"
+                                    name="button"
+                                    mat-menu-item
+                                    (click)="this.globals.gmailThemeId = i; $event.stopPropagation();"
+                                    >
+                                    {{theme.name}}
+                                  </button>
+                                </div>
+                              </mat-menu>
+
+                            </span>
+
+                          </mat-toolbar>
+
+                          <mat-expansion-panel expanded>
+
+                            <mat-expansion-panel-header
+                              [collapsedHeight]="'40px'"
+                              [expandedHeight]="'40px'"
+                              [style.color]="this.gmailThemes[this.globals.gmailThemeId].primaryColor"
+                              >
+                              Unread
+                            </mat-expansion-panel-header>
+
+                            <ul class="unread">
+
+                              <li *ngFor="let email of unreadEmails">
+                                <button class="check" mat-icon-button>
+                                  <mat-icon>check_box_outline_blank</mat-icon>
+                                </button>
+                                <button class="star" mat-icon-button>
+                                  <mat-icon *ngIf="email.star" style="color: #f08c02">star</mat-icon>
+                                  <mat-icon *ngIf="!email.star">star_border</mat-icon>
+                                </button>
+                                <p [innerHTML]="email.name" class="name"></p>
+                                <p class="subjectbody">
+                                  <span class="subject" [innerHTML]="email.subject" ></span> —
+                                  <span class="body" [innerHTML]="email.body" ></span>
+                                </p>
+                                <p class="date" [innerHTML]="email.date"></p>
+                              </li>
+
+                            </ul>
+
+                          </mat-expansion-panel>
+
+                          <mat-expansion-panel expanded>
+                            <mat-expansion-panel-header
+                              [style.color]="this.gmailThemes[this.globals.gmailThemeId].primaryColor"
+                              [collapsedHeight]="'40px'"
+                              [expandedHeight]="'40px'">
+                              Everything else
+                            </mat-expansion-panel-header>
+
+                            <ul class="every">
+
+                              <li *ngFor="let email of everyThingElse">
+                                <button class="check" mat-icon-button>
+                                  <mat-icon>check_box_outline_blank</mat-icon>
+                                </button>
+                                <button class="star" mat-icon-button>
+                                  <mat-icon *ngIf="email.star" style="color: #f08c02">star</mat-icon>
+                                  <mat-icon *ngIf="!email.star">star_border</mat-icon>
+                                </button>
+                                <p [innerHTML]="email.name" class="name"></p>
+                                <p class="subjectbody">
+                                  <span class="subject" [innerHTML]="email.subject" ></span> —
+                                  <span class="body" [innerHTML]="email.body" ></span>
+                                </p>
+                                <p class="date" [innerHTML]="email.date"></p>
+                              </li>
+
+                            </ul>
+
+                          </mat-expansion-panel>
+
+                        </div>
+
+                        <!-- / DT Content -->
+
+                      </mat-sidenav-content>
+
+                    </mat-sidenav-container>
+
+                    <!-- Mobile Footer -->
+                    <footer
+                        *ngIf="this.globals.isMobileResolution"
+                        [ngStyle]="this.globals.gmailDecorLevelOne ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelOne.footer : this.globals.gmailDecorLevelTwo ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelTwo.footer : this.globals.gmailDecorLevelThree ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelThere.footer : this.globals.gmailDecorLevelFour ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.levelFour.footer : null"
+                        class="mfooter"
+                        [style.margin]="'0.5em -1em 0'"
+                        [style.textAlign]="'center'"
+                        >
+
+                      <button mat-icon-button>
+                        <mat-icon>expand_more</mat-icon>
+                      </button>
+
+                      <button mat-icon-button>
+                        <mat-icon>more_horiz</mat-icon>
+                      </button>
+
+                    </footer>
+
+                  </div>
+
+              </mat-sidenav-content>
+
+      </mat-sidenav-container>
+
+    </div>
+    <div [ngClass]="{'device-stripe' : this.globals.useMobileDeviceFrame}"></div>
+    <div [ngClass]="{'device-header' : this.globals.useMobileDeviceFrame}"></div>
+    <div [ngClass]="{'device-sensors' : this.globals.useMobileDeviceFrame}"></div>
+    <div [ngClass]="{'device-btns' : this.globals.useMobileDeviceFrame}"></div>
+    <div [ngClass]="{'device-power' : this.globals.useMobileDeviceFrame}"></div>
+  </div>
+
+</div>
+
+
+<!-- Theme -->
+<div *ngIf="this.globals.gmailThemeId != 0" class="theme">
+  <div
+    class="background"
+    [ngStyle]="this.gmailThemes[this.globals.gmailThemeId].styles.background"></div>
+  <div
+    *ngFor="let asset of this.gmailThemes[this.globals.gmailThemeId].styles.assets; let i = index"
+    [class]="'asset_'+i"
+    [ngStyle]="asset"></div>
+</div>

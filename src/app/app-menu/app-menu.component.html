@@ -1,0 +1,251 @@
+<div class="app-menu">
+
+  <p class="app-menu__title">DoodleX Control Panel</p>
+
+  <p>
+    <span>{{local}}-screen</span>
+    <span *ngIf="globals.isMobileResolution">:mobile</span>
+    <span *ngIf="!globals.isMobileResolution">:desktop</span>
+  </p>
+
+  <!-- <mat-tab-group> -->
+
+    <!-- <mat-tab label="Basic"> -->
+
+      <!-- Which Doodle? -->
+      <!-- <mat-form-field>
+        <mat-label>Doodle?</mat-label>
+        <mat-select>
+          <mat-option
+            *ngFor="let doodle of activeDoodletypes"
+            [value]="doodle.id"
+            (click)="setActiveDoodle(doodle.id, doodle.triggers[0])"
+            selected="doodle.id == globals.activeDoodleID"
+            >
+            {{doodle.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> -->
+
+
+
+      <div class="control-group" *ngIf="local == 'ginbox'">
+        <mat-label class="control-group__label">Logo</mat-label>
+
+        <mat-button-toggle-group>
+
+          <mat-button-toggle
+            [checked]="this.globals.gmailDoodleNo"
+            (click)="changeGmailDoodleType('light')"
+            value="No Doodle">
+            No Doodle
+          </mat-button-toggle>
+
+          <mat-button-toggle
+            [checked]="this.globals.gmailDoodleLevelOne"
+            (click)="changeGmailDoodleType('medium')"
+            value="Level One">
+            Doodle
+          </mat-button-toggle>
+
+        </mat-button-toggle-group>
+      </div>
+
+      <div class="control-group" *ngIf="local == 'ginbox'">
+        <mat-label class="control-group__label">Logo Type</mat-label>
+
+        <mat-button-toggle-group>
+
+          <mat-button-toggle
+            (click)="changeLogoColor('alternative')"
+            [checked]="this.globals.gmailDoodleAlternativeColor"
+          >
+          Alt
+          </mat-button-toggle>
+
+          <mat-button-toggle
+            (click)="changeLogoColor('standard')"
+            [checked]="this.globals.gmailDoodleStandardColor"
+          >
+          Standard
+          </mat-button-toggle>
+
+        </mat-button-toggle-group>
+      </div>
+
+      <div class="control-group" *ngIf="local == 'ginbox'">
+        <mat-label class="control-group__label">Toolbar</mat-label>
+
+        <mat-button-toggle-group>
+
+          <mat-button-toggle
+            mat-button
+            (click)="changeGmailDecor('gmailDecorNo')"
+            [checked]="this.globals.gmailDecorNo"
+            >
+            No Decor
+          </mat-button-toggle>
+
+          <mat-button-toggle
+            mat-button
+            (click)="changeGmailDecor('gmailDecorLevelOne')"
+            [checked]="this.globals.gmailSimpleToolbarDecor"
+            >
+            Decor
+          </mat-button-toggle>
+
+          <!-- <mat-button-toggle
+            disabled
+            mat-button
+            (click)="changeGmailDecor('gmailDecorLevelTwo')"
+            [checked]="this.globals.gmailElaborateToolbarDecor"
+            >
+            2
+          </mat-button-toggle>
+
+          <mat-button-toggle
+            disabled
+            mat-button
+            (click)="changeGmailDecor('gmailDecorLevelThree')"
+            [checked]="this.globals.gmailElaborateToolbarDecor"
+            >
+            3
+          </mat-button-toggle>
+
+          <mat-button-toggle
+            disabled
+            mat-button
+            (click)="changeGmailDecor('gmailDecorLevelFour')"
+            [checked]="this.globals.gmailWholePageDecor"
+            >
+            4
+          </mat-button-toggle> -->
+
+
+        </mat-button-toggle-group>
+      </div>
+
+      <div class="control-group" *ngIf="local == 'ginbox'">
+        <mat-label class="control-group__label">Search Bar</mat-label>
+
+        <mat-button-toggle-group>
+
+          <mat-button-toggle
+          (click)="changeGmailSearchBarColor('l1')"
+          [checked]="this.globals.gmailSearchBarLevelOne">
+          Standard
+          </mat-button-toggle>
+
+          <mat-button-toggle
+          (click)="changeGmailSearchBarColor('l2')"
+          [checked]="this.globals.gmailSearchBarLevelTwo">
+          Themed
+          </mat-button-toggle>
+
+        </mat-button-toggle-group>
+      </div>
+
+
+      <div class="control-group" *ngIf="local == 'results'">
+        <mat-label class="control-group__label">Toolbar</mat-label>
+
+        <mat-button-toggle-group>
+
+          <mat-button-toggle
+          (click)="changeSrpToolbarBehavior('toggle')"
+          [checked]="this.globals.srpToolbarToggle">
+          Toggle
+          </mat-button-toggle>
+
+          <mat-button-toggle
+          (click)="changeSrpToolbarBehavior('morph')"
+          [checked]="this.globals.srpToolbarMorph">
+          Morph
+          </mat-button-toggle>
+
+        </mat-button-toggle-group>
+      </div>
+
+      <div class="control-group" *ngIf="local == 'results'">
+        <mat-label class="control-group__label">Decor</mat-label>
+
+        <mat-button-toggle-group>
+
+          <mat-button-toggle
+            (click)="changeSrpDecor('srpNoDecor')"
+            [checked]="this.globals.srpNoDecor">
+            0
+          </mat-button-toggle>
+
+          <mat-button-toggle
+            (click)="changeSrpDecor('srpSimpleToolbarDecor')"
+            [checked]="this.globals.srpSimpleToolbarDecor">
+            1
+          </mat-button-toggle>
+
+          <mat-button-toggle
+            (click)="changeSrpDecor('srpElaborateToolbarDecor')"
+            [checked]="this.globals.srpElaborateToolbarDecor">
+            2
+          </mat-button-toggle>
+          <mat-button-toggle
+            (click)="changeSrpDecor('srpElaborateClearToolbarDecor')"
+            [checked]="this.globals.srpElaborateClearToolbarDecor">
+            2.1
+          </mat-button-toggle>
+
+          <mat-button-toggle
+            (click)="changeSrpDecor('srpWholePageDecor')"
+            [checked]="this.globals.srpWholePageDecor">
+            3
+          </mat-button-toggle>
+
+
+        </mat-button-toggle-group>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- </mat-tab> -->
+
+
+
+  <!-- </mat-tab-group> -->
+
+</div>

@@ -1,0 +1,25 @@
+@import "../../../variables.scss";
+
+.hpp {
+  &__content {
+
+    max-width: 560px;
+    color: grey;
+    text-align: center;
+    font-size: 13px;
+    padding: 0 4em;
+
+    margin: 1em auto;
+
+    @include lg {
+      margin: 2em auto;
+    }
+
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

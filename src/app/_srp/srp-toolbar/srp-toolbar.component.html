@@ -1,0 +1,278 @@
+<!-- Desktop Toolbar -->
+<mat-toolbar
+  *ngIf="!this.globals.isMobileResolution"
+  id="secondary-toolbar"
+  class="secondary-toolbar srp-toolbar"
+
+  [ngStyle]="
+    this.globals.srpSimpleToolbarDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.secondaryToolbar.simple :
+    this.globals.srpElaborateToolbarDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.secondaryToolbar.elaborate :
+    this.globals.srpWholePageDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.secondaryToolbar.whole :
+    null"
+
+
+  >
+  <!-- [style.backgroundColor]="this.globals.srpBgColorNo ? 'transparent' : null" -->
+  <mat-toolbar-row class="srp-toolbar__top-row flex flex-row flex-align-start flex-space-between">
+
+    <div class="flex flex-row">
+
+      <!-- LOGO -->
+      <app-srp-logo
+        class="srp-toolbar__logo"
+        >
+      </app-srp-logo>
+
+      <!-- SEARCH BAR -->
+      <app-search-bar
+        class="secondary"
+        page="srp">
+      </app-search-bar>
+
+    </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- Desktop Toolbar -->
+<mat-toolbar
+  *ngIf="!this.globals.isMobileResolution"
+  id="primary-toolbar"
+  class="primary-toolbar srp-toolbar"
+  [ngStyle]="
+    this.globals.srpSimpleToolbarDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.simple :
+    this.globals.srpElaborateToolbarDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.elaborate :
+    this.globals.srpElaborateClearToolbarDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.elaborate_clear : 
+    this.globals.srpWholePageDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.whole :
+    null"
+  [style.position]="this.globals.srpToolbarToggle ? 'static' : null"
+  >
+
+  <mat-toolbar-row class="srp-toolbar__row--top srp-toolbar__top-row flex flex-row flex-align-start flex-space-between">
+
+    <div class="flex flex-row">
+
+      <!-- LOGO -->
+      <app-srp-logo
+        class="srp-toolbar__logo"
+        >
+      </app-srp-logo>
+
+      <app-search-bar
+        class="primary"
+        page="srp">
+      </app-search-bar>
+
+    </div>
+
+    <div class="">
+
+      <button
+        routerLink="/search/{{globals.searchQuery}}"
+
+        mat-icon-button>
+        <mat-icon aria-label="Apps Icon">apps</mat-icon>
+        <!-- (click)="prototypeClick('Apps');" -->
+      </button>
+
+      <button
+        (click)="prototypeClick('Account');"
+        mat-icon-button>
+        <mat-icon >account_circle</mat-icon>
+      </button>
+
+    </div>
+
+  </mat-toolbar-row>
+
+  <mat-toolbar-row class="srp-toolbar__row--bottom srp-toolbar__bottom-row">
+
+    <div class="left-side-spacer">&nbsp;</div>
+
+    <div class="srp-toolbar__tabs bottom-row-section flex flex-row flex-space-between">
+
+      <div class="buttons">
+        <button
+          class="srp-toolbar__button active"
+          mat-button
+          (click)="prototypeClick('All');">
+          All
+        </button>
+
+        <button
+          class="srp-toolbar__button"
+          mat-button
+          (click)="prototypeClick('News');">
+          News
+        </button>
+
+        <button
+          class="srp-toolbar__button"
+          mat-button
+          (click)="prototypeClick('Videos');">
+          Videos
+        </button>
+
+        <button
+          class="srp-toolbar__button"
+          mat-button
+          (click)="prototypeClick('Maps');">
+          Maps
+        </button>
+
+        <button
+          class="srp-toolbar__button"
+          mat-button
+          (click)="prototypeClick('Images');">
+          Images
+        </button>
+
+        <button
+          class="srp-toolbar__button"
+          mat-button
+          (click)="prototypeClick('More');">
+          More
+        </button>
+      </div>
+
+      <div class="buttons">
+        <button
+          class="srp-toolbar__button"
+          mat-button
+          (click)="prototypeClick('Settings');">
+          Settings
+        </button>
+
+        <button
+          class="srp-toolbar__button"
+          mat-button
+          (click)="prototypeClick('Tools');">
+          Tools
+        </button>
+      </div>
+
+    </div>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>
+
+<div
+  *ngIf="!this.globals.isMobileResolution"
+  class="srp__decor"
+  [ngStyle]="this.globals.srpSimpleToolbarDecor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.cont.simple : this.globals.srpElaborateToolbarDecor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.cont.elaborate : this.globals.srpWholePageDecor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.cont.whole : null"
+  >
+
+</div>
+
+<!-- Mobile ToolBar -->
+<mat-toolbar
+  *ngIf="this.globals.isMobileResolution"
+  id="mobile-toolbar"
+  class="srp-toolbar srp-toolbar--mobile"
+
+  [ngStyle]="this.globals.srpSimpleToolbarDecor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.simple : this.globals.srpElaborateToolbarDecor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.elaborate : this.globals.srpWholePageDecor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.whole : null"
+
+  >
+
+  <!-- Logo & Menu Row -->
+  <mat-toolbar-row class="" style="margin-bottom: 0.5em;">
+
+    <button
+      (click)="prototypeClick('Menu');"
+      mat-icon-button>
+      <mat-icon >menu</mat-icon>
+    </button>
+
+    <app-srp-logo
+      class="srp-toolbar__logo srp-toolbar__logo--mobile"
+      >
+    </app-srp-logo>
+
+  </mat-toolbar-row>
+
+  <!-- Search Bar Row -->
+  <mat-toolbar-row class="" style="height: unset;">
+
+    <!-- SEARCH BAR -->
+    <app-search-bar
+      class="mobile"
+      page="srp">
+    </app-search-bar>
+
+  </mat-toolbar-row>
+
+  <!-- Results Tools -->
+  <mat-toolbar-row
+    class="side-scroll"
+    style="height:unset;">
+
+    <div class="side-scroll-cont">
+
+      <button
+        class="srp-toolbar__button srp-toolbar__button--mobile"
+        mat-button>
+        All
+      </button>
+
+      <button
+        class="srp-toolbar__button srp-toolbar__button--mobile"
+        mat-button>
+        Images
+      </button>
+
+      <button
+        class="srp-toolbar__button srp-toolbar__button--mobile"
+        mat-button>
+        News
+      </button>
+
+      <button
+        class="srp-toolbar__button srp-toolbar__button--mobile"
+        mat-button>
+        Videos
+      </button>
+
+      <button
+        class="srp-toolbar__button srp-toolbar__button--mobile"
+        mat-button>
+        Maps
+      </button>
+
+      <button
+        class="srp-toolbar__button srp-toolbar__button--mobile"
+        mat-button>
+        Shopping
+      </button>
+
+      <button
+        class="srp-toolbar__button srp-toolbar__button--mobile"
+        mat-button>
+        Books
+      </button>
+
+      <button
+        class="srp-toolbar__button srp-toolbar__button--mobile"
+        mat-button>
+        Flights
+      </button>
+
+      <button
+        class="srp-toolbar__button srp-toolbar__button--mobile"
+        mat-button>
+        Personal
+      </button>
+
+      |
+
+      <button
+        class="srp-toolbar__button srp-toolbar__button--mobile"
+        mat-button>
+        Search Tools
+      </button>
+
+    </div>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>

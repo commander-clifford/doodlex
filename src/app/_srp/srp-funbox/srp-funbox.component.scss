@@ -1,0 +1,115 @@
+@import "../../../variables.scss";
+
+.funbox {
+
+  background: white;
+  border-radius: 0.5em;
+  position: relative;
+
+  &__mat-card {
+
+    height: 100%;
+    overflow: hidden;
+    background: transparent;
+    z-index: 1;
+    min-height: 132px;
+
+  }
+
+  &__mat-card-content {
+    height: 100%;
+
+    @include lg {
+      display: flex !important;
+      justify-content: space-between;
+    }
+
+    &--left {
+
+      @include lg {
+        width: 240px;
+      }
+
+    }
+
+    &--right {
+      outline: none;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      @include lg {
+        position: relative;
+      }
+
+    }
+  }
+
+  &__title {
+
+    margin: 0 0 0.2em 0;
+    width: max-content;
+    font-size: 36px;
+
+    @include lg {
+      font-size: 36px;
+      font-weight: 300;
+    }
+
+  }
+
+  &__desc {
+    margin: 0;
+    margin-top: 0.2em 0 0 0;
+    color: #878787;
+    color: rgba(0,0,0,0.5);
+    font-weight: 300;
+    font-size: 16px;
+  }
+
+  &__message {
+    font-size: xx-large;
+    margin: 0;
+  }
+
+  // overwrite
+  &__easter {
+
+    .funbox__title {
+      // color: white;
+      // text-shadow: -1px 1px 0px rgba(0,0,0,0.5);
+    }
+
+
+    .funbox__message {
+      color: white;
+      font-family: 'Life Savers', cursive;
+      text-shadow:
+        // 1px -1px 0 #0083f2,
+        -1px 1px 0 hsl(313,73%,75%),
+        -2px 2px 0 hsl(313,73%,70%),
+        -3px 3px 0 hsl(313,73%,65%),
+        -4px 4px 0 hsl(313,73%,55%),
+        0 0 5px rgba(0,0,0,.05),
+        0 0 8px rgba(0,0,0,.1),
+        0 1px 3px rgba(0,0,0,.2),
+        0 3px 5px rgba(0,0,0,.2),
+        0 5px 10px rgba(0,0,0,.2);
+    }
+
+    .funbox__img {
+      cursor: pointer;
+      outline: none;
+      width: 120px;
+
+      transform: translate(0, 3px);
+      @include lg {
+        transform: translate(0, 19px);
+      }
+    }
+  }
+}
