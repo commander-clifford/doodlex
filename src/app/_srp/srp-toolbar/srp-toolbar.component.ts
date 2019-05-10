@@ -224,17 +224,17 @@ export class SrpToolbarComponent implements OnInit {
 
     // TODO this shoudl be a service
 
-    if(x === 'srpNoDecor'){
+    if(x === 'srpL0Decor'){
 
       this.globals.srpSimpleToolbarDecor = false;
       this.globals.srpElaborateToolbarDecor = false;
       this.globals.srpWholePageDecor = false;
 
-      this.globals.srpNoDecor = true;
+      this.globals.srpL0Decor = true;
     }else
     if(x === 'srpSimpleToolbarDecor'){
 
-      this.globals.srpNoDecor = false;
+      this.globals.srpL0Decor = false;
       this.globals.srpElaborateToolbarDecor = false;
       this.globals.srpWholePageDecor = false;
 
@@ -242,7 +242,7 @@ export class SrpToolbarComponent implements OnInit {
     }else
     if(x === 'srpElaborateToolbarDecor'){
 
-      this.globals.srpNoDecor = false;
+      this.globals.srpL0Decor = false;
       this.globals.srpSimpleToolbarDecor = false;
       this.globals.srpWholePageDecor = false;
 
@@ -250,7 +250,7 @@ export class SrpToolbarComponent implements OnInit {
     }else
     if(x === 'srpWholePageDecor'){
 
-      this.globals.srpNoDecor = false;
+      this.globals.srpL0Decor = false;
       this.globals.srpSimpleToolbarDecor = false;
       this.globals.srpElaborateToolbarDecor = false;
 

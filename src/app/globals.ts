@@ -73,11 +73,16 @@ export class Globals {
   logoStrictLetterReplace: boolean = false;
 
   srpBgColorNo: boolean = true;
-  srpNoDecor: boolean = false;
+
+  srpL0Decor: boolean = true;
+  srpL1Decor: boolean = false;
+  srpL2Decor: boolean = false;
+  srpL3Decor: boolean = false;
+
+  srpWholePageDecor: boolean = false;
+
   srpSimpleToolbarDecor: boolean = false;
   srpElaborateToolbarDecor: boolean = false;
-  srpElaborateClearToolbarDecor: boolean = true;
-  srpWholePageDecor: boolean = false;
 
   srpToolbarToggle: boolean = false;
   srpToolbarMorph: boolean = true;

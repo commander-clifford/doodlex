@@ -64,6 +64,9 @@ export class AppMenuComponent implements OnInit {
 
   }
 
+
+
+
   private changeGmailDoodleType(x): void {
 
     if(x === 'light'){
@@ -197,6 +200,9 @@ export class AppMenuComponent implements OnInit {
 
   }
 
+
+
+
   private changeSrpToolbarBehavior(x): void {
     if(x === 'toggle'){
       this.globals.srpToolbarMorph = false;
@@ -238,9 +244,14 @@ export class AppMenuComponent implements OnInit {
 
 
 
-    if(x === 'srpNoDecor'){
+    if(x === 0){
 
-      this.globals.srpNoDecor = true;
+      this.globals.srpL0Decor = true;
+
+      this.globals.srpL0Decor = false;
+      this.globals.srpL1Decor = false;
+      this.globals.srpL2Decor = false;
+      this.globals.srpL3Decor = false;
 
       this.globals.srpSimpleToolbarDecor = false;
       this.globals.srpElaborateToolbarDecor = false;
@@ -249,52 +260,62 @@ export class AppMenuComponent implements OnInit {
 
 
     }else
-    if(x === 'srpSimpleToolbarDecor'){
+    if(x === 1){
 
-      this.globals.srpSimpleToolbarDecor = true;
-
-      this.globals.srpNoDecor = false;
+      this.globals.srpSimpleToolbarDecor = false;
       this.globals.srpElaborateToolbarDecor = false;
       this.globals.srpElaborateClearToolbarDecor = false;
       this.globals.srpWholePageDecor = false;
 
 
-    }else
-    if(x === 'srpElaborateToolbarDecor'){
+      this.globals.srpL0Decor = false;
+      this.globals.srpL1Decor = true;
+      this.globals.srpL2Decor = false;
+      this.globals.srpL3Decor = false;
 
-      this.globals.srpElaborateToolbarDecor = true;
 
-      this.globals.srpNoDecor = false;
-      this.globals.srpSimpleToolbarDecor = false;
-      this.globals.srpWholePageDecor = false;
 
 
     }else
-    if(x === 'srpElaborateClearToolbarDecor'){
+    if(x === 2){
 
-      this.globals.srpElaborateClearToolbarDecor = true;
-
-      this.globals.srpNoDecor = false;
       this.globals.srpSimpleToolbarDecor = false;
       this.globals.srpElaborateToolbarDecor = false;
+      this.globals.srpElaborateClearToolbarDecor = false;
+      this.globals.srpWholePageDecor = false;
+      this.globals.srpElaborateToolbarDecor = false;
+      this.globals.srpSimpleToolbarDecor = false;
       this.globals.srpWholePageDecor = false;
 
 
+      this.globals.srpL0Decor = false;
+      this.globals.srpL1Decor = false;
+      this.globals.srpL2Decor = true;
+      this.globals.srpL3Decor = false;
+
+
     }else
-    if(x === 'srpWholePageDecor'){
+    if(x === 3){
 
       this.globals.srpWholePageDecor = true;
 
-      this.globals.srpNoDecor = false;
+      this.globals.srpL0Decor = false;
       this.globals.srpSimpleToolbarDecor = false;
       this.globals.srpElaborateToolbarDecor = false;
       this.globals.srpElaborateClearToolbarDecor = false;
 
+      this.globals.srpL0Decor = false;
+      this.globals.srpL1Decor = false;
+      this.globals.srpL2Decor = false;
+      this.globals.srpL3Decor = true;
 
     }
 
 
   }
+
+
+
 
   private toggleMobileLayout(): void {
     this.globals.isMobileResolution = !this.globals.isMobileResolution;

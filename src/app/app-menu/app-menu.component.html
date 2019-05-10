@@ -172,31 +172,27 @@
         <mat-button-toggle-group>
 
           <mat-button-toggle
-            (click)="changeSrpDecor('srpNoDecor')"
-            [checked]="this.globals.srpNoDecor">
+            (click)="changeSrpDecor(0)"
+            [checked]="this.globals.srpL0Decor">
             0
           </mat-button-toggle>
 
           <mat-button-toggle
-            (click)="changeSrpDecor('srpSimpleToolbarDecor')"
-            [checked]="this.globals.srpSimpleToolbarDecor">
+            (click)="changeSrpDecor(1)"
+            [checked]="this.globals.srpL1Decor">
             1
           </mat-button-toggle>
 
           <mat-button-toggle
-            (click)="changeSrpDecor('srpElaborateToolbarDecor')"
-            [checked]="this.globals.srpElaborateToolbarDecor">
+            (click)="changeSrpDecor(2)"
+            [checked]="this.globals.srpL2Decor">
             2
           </mat-button-toggle>
-          <mat-button-toggle
-            (click)="changeSrpDecor('srpElaborateClearToolbarDecor')"
-            [checked]="this.globals.srpElaborateClearToolbarDecor">
-            2.1
-          </mat-button-toggle>
+
 
           <mat-button-toggle
-            (click)="changeSrpDecor('srpWholePageDecor')"
-            [checked]="this.globals.srpWholePageDecor">
+            (click)="changeSrpDecor(3)"
+            [checked]="this.globals.srpL3Decor">
             3
           </mat-button-toggle>
 

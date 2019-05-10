@@ -6,8 +6,8 @@
 
   [ngStyle]="
     this.globals.srpSimpleToolbarDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.secondaryToolbar.simple :
-    this.globals.srpElaborateToolbarDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.secondaryToolbar.elaborate :
-    this.globals.srpWholePageDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.secondaryToolbar.whole :
+    this.globals.srpElaborateToolbarDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.secondaryToolbar.L2 :
+    this.globals.srpWholePageDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.secondaryToolbar.L3 :
     null"
 
 
@@ -40,10 +40,10 @@
   id="primary-toolbar"
   class="primary-toolbar srp-toolbar"
   [ngStyle]="
-    this.globals.srpSimpleToolbarDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.simple :
-    this.globals.srpElaborateToolbarDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.elaborate :
-    this.globals.srpElaborateClearToolbarDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.elaborate_clear : 
-    this.globals.srpWholePageDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.whole :
+    this.globals.srpL3Decor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.L3 :
+    this.globals.srpL2Decor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.L2 :
+    this.globals.srpL1Decor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.L1 :
+    this.globals.srpL0Decor ? null :
     null"
   [style.position]="this.globals.srpToolbarToggle ? 'static' : null"
   >
@@ -160,8 +160,16 @@
 <div
   *ngIf="!this.globals.isMobileResolution"
   class="srp__decor"
-  [ngStyle]="this.globals.srpSimpleToolbarDecor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.cont.simple : this.globals.srpElaborateToolbarDecor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.cont.elaborate : this.globals.srpWholePageDecor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.cont.whole : null"
+  [ngStyle]="
+    this.globals.srpL1Decor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.decor.L1 :
+    this.globals.srpL2Decor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.decor.L2 :
+    this.globals.srpL3Decor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.decor.L3 :
+    this.globals.srpL0Decor ? null :
+    null
+  "
+  [style.position]="this.globals.srpToolbarToggle ? 'absolute' : null"
   >
+
 
 </div>
 
@@ -170,9 +178,11 @@
   *ngIf="this.globals.isMobileResolution"
   id="mobile-toolbar"
   class="srp-toolbar srp-toolbar--mobile"
-
-  [ngStyle]="this.globals.srpSimpleToolbarDecor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.simple : this.globals.srpElaborateToolbarDecor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.elaborate : this.globals.srpWholePageDecor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.whole : null"
-
+  [ngStyle]="
+    this.globals.srpSimpleToolbarDecor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.L1 :
+    this.globals.srpElaborateToolbarDecor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.L2 :
+    this.globals.srpWholePageDecor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.toolbar.L3 :
+    null"
   >
 
   <!-- Logo & Menu Row -->
