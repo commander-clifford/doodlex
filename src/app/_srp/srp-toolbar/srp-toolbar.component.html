@@ -5,9 +5,10 @@
   class="secondary-toolbar srp-toolbar"
 
   [ngStyle]="
-    this.globals.srpSimpleToolbarDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.secondaryToolbar.simple :
-    this.globals.srpElaborateToolbarDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.secondaryToolbar.L2 :
-    this.globals.srpWholePageDecor ? doodletypes[this.globals.activeDoodleID].styles.srp.secondaryToolbar.L3 :
+    this.globals.srpL3Decor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.secondaryToolbar.L3 :
+    this.globals.srpL2Decor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.secondaryToolbar.L2 :
+    this.globals.srpL1Decor ? this.doodletypes[this.globals.activeDoodleID].styles.srp.secondaryToolbar.L1 :
+    this.globals.srpL0Decor ? null :
     null"
 
 

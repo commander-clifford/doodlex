@@ -198,55 +198,35 @@ export const DOODLETYPES: Doodletype[] = [
         },
         toolbar: {
           L1: {
-            background: 'none',
             border: 'none',
             color: '#284505',
-            // // borderBottom: '1px solid #f4f5aa',
-            // borderBottom: 'none',
-            // background: `
-            //   url(./assets/styles/srp/summer-solstice__full-toolbar--2x.png) left center no-repeat,
-            //   #f4f5aa`,
+            background: `url(./assets/styles/srp/summer-solstice__decor@2x.png) left top no-repeat / 1920px 243px`,
           },
           L2: {
-            background: 'none',
+            background: `url(./assets/styles/srp/summer-solstice__decor--v2@2x.png) left top no-repeat / 1920px 243px`,
             border: 'none',
-            // height: '150px',
             color: '#284505',
-            // borderBottom: '1px solid #f4f5aa',
-            // borderBottom: 'none',
-            // background: `
-              // url(./assets/styles/srp/summer-solstice__full-top-toolbar--2x.png) left top / 100% 118px no-repeat, linear-gradient(#f4f5aa, white)`,
           },
           L3: {
             color: '#284505',
             borderBottom: 'none',
             background: 'transparent',
-            // background: `
-            //   url(./assets/styles/srp/summer-solstice__full-toolbar--2x.png) left center no-repeat, linear-gradient(to bottom, white , white)`,
           }
         },
         secondaryToolbar: {
-          simple: {
+          L1: {
             color: '#284505',
-            // borderBottom: '1px solid #f4f5aa',
             borderBottom: 'none',
-            background: `
-              url(./assets/styles/srp/summer-solstice__full-toolbar--2x.png) left center no-repeat,
-              #f4f5aa`,
+            background: `url(./assets/styles/srp/summer-solstice__decor@2x.png) left top no-repeat / 1920px 243px`,
+            },
+          L2: {
+            color: '#284505',
+            borderBottom: 'none',
+            background: `url(./assets/styles/srp/summer-solstice__decor--v2@2x.png) left top no-repeat / 1920px 243px`,
           },
-          elaborate: {
-            color: '#284505',
-            // borderBottom: '1px solid #f4f5aa',
-            borderBottom: 'none',
-            background: `
-              url(./assets/styles/srp/summer-solstice__full-top-toolbar--2x.png) left center no-repeat, linear-gradient(#f4f5aa, white)`,
-          },
-          whole: {
+          L3: {
             color: '#284505',
             borderBottom: 'none',
-            background: 'rgba(255,255,255,0.85)',
-            // background: `
-            //   url(./assets/styles/srp/summer-solstice__full-toolbar--2x.png) left center no-repeat, linear-gradient(to bottom, white , white)`,
           }
         }
       },

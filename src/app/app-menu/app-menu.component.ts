@@ -242,8 +242,6 @@ export class AppMenuComponent implements OnInit {
 
   private changeSrpDecor(x): void {
 
-
-
     if(x === 0){
 
       this.globals.srpL0Decor = true;
