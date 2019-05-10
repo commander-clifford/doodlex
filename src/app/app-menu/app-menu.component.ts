@@ -255,7 +255,6 @@ export class AppMenuComponent implements OnInit {
 
       this.globals.srpSimpleToolbarDecor = false;
       this.globals.srpElaborateToolbarDecor = false;
-      this.globals.srpElaborateClearToolbarDecor = false;
       this.globals.srpWholePageDecor = false;
 
 
@@ -264,7 +263,6 @@ export class AppMenuComponent implements OnInit {
 
       this.globals.srpSimpleToolbarDecor = false;
       this.globals.srpElaborateToolbarDecor = false;
-      this.globals.srpElaborateClearToolbarDecor = false;
       this.globals.srpWholePageDecor = false;
 
 
@@ -281,7 +279,6 @@ export class AppMenuComponent implements OnInit {
 
       this.globals.srpSimpleToolbarDecor = false;
       this.globals.srpElaborateToolbarDecor = false;
-      this.globals.srpElaborateClearToolbarDecor = false;
       this.globals.srpWholePageDecor = false;
       this.globals.srpElaborateToolbarDecor = false;
       this.globals.srpSimpleToolbarDecor = false;
@@ -302,7 +299,6 @@ export class AppMenuComponent implements OnInit {
       this.globals.srpL0Decor = false;
       this.globals.srpSimpleToolbarDecor = false;
       this.globals.srpElaborateToolbarDecor = false;
-      this.globals.srpElaborateClearToolbarDecor = false;
 
       this.globals.srpL0Decor = false;
       this.globals.srpL1Decor = false;
