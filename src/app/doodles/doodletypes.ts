@@ -31,16 +31,21 @@ export const DOODLETYPES: Doodletype[] = [
         },
       },
       srp: {
-        cont: {
-          simple: {},
-          elaborate: {},
-          whole: {},
+        decor: {
+          L1: {},
+          L2: {},
+          L3: {},
         },
         toolbar: {
-          simple: {},
-          elaborate: {},
-          whole: {}
-        }
+          L1: {},
+          L2: {},
+          L3: {}
+        },
+        secondaryToolbar: {
+          L1: {},
+          L2: {},
+          L3: {}
+        },
       },
       gmail: {
         primaryColor: null,
@@ -393,24 +398,35 @@ export const DOODLETYPES: Doodletype[] = [
         },
       },
       srp: {
-        cont: {
-          simple: {},
-          elaborate: {
+        decor: {
+          L1: {},
+          L2: {
 
           },
-          whole: {},
+          L3: {},
         },
         toolbar: {
-          simple: {
+          L1: {
 
           },
-          elaborate: {
+          L2: {
             background: 'url(./assets/doodle-styles/meteor-header_core.png) center top no-repeat, #000',
           },
-          whole: {
+          L3: {
 
           }
-        }
+        },
+        secondaryToolbar: {
+          L1: {
+
+          },
+          L2: {
+            background: 'url(./assets/doodle-styles/meteor-header_core.png) center top no-repeat, #000',
+          },
+          L3: {
+
+          }
+        },
       },
       gmail: {
         primaryColor: '#c2e5ec',
@@ -566,23 +582,37 @@ export const DOODLETYPES: Doodletype[] = [
         },
       },
       srp: {
-        cont: {
-          simple: {},
-          elaborate: {},
-          whole: {
+        decor: {
+          L1: {},
+          L2: {},
+          L3: {
             background: "#faf7d4"
           },
         },
         toolbar: {
-          simple: {
+          L1: {
             background: "linear-gradient(transparent, #f2ffd0)",
             borderBottom: "1px solid #eee8ab",
           },
-          elaborate: {
+          L2: {
             background: "linear-gradient(transparent, #f2ffd0)",
             borderBottom: "1px solid #eee8ab",
           },
-          whole: {
+          L3: {
+            borderBottom: "1px solid #eee8ab",
+            background: "url('./assets/header_bg-bird-right.png') right bottom no-repeat, url('./assets/header_bg-bird-left.png') left bottom no-repeat, linear-gradient(#faf7d4, #faf7d4)",
+          }
+        },
+        secondaryToolbar: {
+          L1: {
+            background: "linear-gradient(transparent, #f2ffd0)",
+            borderBottom: "1px solid #eee8ab",
+          },
+          L2: {
+            background: "linear-gradient(transparent, #f2ffd0)",
+            borderBottom: "1px solid #eee8ab",
+          },
+          L3: {
             borderBottom: "1px solid #eee8ab",
             background: "url('./assets/header_bg-bird-right.png') right bottom no-repeat, url('./assets/header_bg-bird-left.png') left bottom no-repeat, linear-gradient(#faf7d4, #faf7d4)",
           }
@@ -807,22 +837,36 @@ export const DOODLETYPES: Doodletype[] = [
 
       srp: {
         cont: {
-          simple: {},
-          elaborate: {},
-          whole: {
+          L1: {},
+          L2: {},
+          L3: {
             background: "url('./assets/body_bg-hina-left.png') left 180px no-repeat, url('./assets/body_bg-hina-right.png') right 120px no-repeat, #fffae4",
           },
         },
         toolbar: {
-          simple: {
+          L1: {
             backgroundImage: "linear-gradient(transparent, #ffddd0)",
             borderBottom: "1px solid #e9c1b1",
           },
-          elaborate: {
+          L2: {
             borderBottom: "1px solid #e9c1b1",
             background: "url('./assets/header_bg-hina-right.png') right bottom no-repeat, linear-gradient(#ffddd0, #ffddd0)",
           },
-          whole: {
+          L3: {
+            borderBottom: "1px solid #e9c1b1",
+            background: "url('./assets/header_bg-hina-right.png') right bottom no-repeat, linear-gradient(#ffddd0, #ffddd0)",
+          }
+        },
+        secondaryToolbar: {
+          L1: {
+            backgroundImage: "linear-gradient(transparent, #ffddd0)",
+            borderBottom: "1px solid #e9c1b1",
+          },
+          L2: {
+            borderBottom: "1px solid #e9c1b1",
+            background: "url('./assets/header_bg-hina-right.png') right bottom no-repeat, linear-gradient(#ffddd0, #ffddd0)",
+          },
+          L3: {
             borderBottom: "1px solid #e9c1b1",
             background: "url('./assets/header_bg-hina-right.png') right bottom no-repeat, linear-gradient(#ffddd0, #ffddd0)",
           }
