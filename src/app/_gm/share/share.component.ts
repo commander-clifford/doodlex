@@ -75,7 +75,7 @@ export class ShareComponent implements OnInit {
 
     let config = new MatSnackBarConfig();
     config.duration = 4000;
-    this.snackBar.open("Sorry to bother ☹️  Configure this in Settings -> Themes", "UNDO", config);
+    this.snackBar.open("Sorry about that. Configure this in Settings -> Themes [FPO]", "UNDO", config);
 
   }
 

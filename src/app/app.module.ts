@@ -80,6 +80,11 @@ import { GmailThemesComponent } from './_gm/gmail-themes/gmail-themes.component'
 import { GmailSnackbarComponent } from './_gm/gmail-snackbar/gmail-snackbar.component';
 import { GmailLoadingComponent } from './_gm/gmail-loading/gmail-loading.component';
 import { SimonSaysComponent } from './doodles/interactive/simon-says/simon-says.component';
+import { CalendarComponent } from './_cal/calendar/calendar.component';
+import { MapsComponent } from './_maps/maps/maps.component';
+import { CalendarToolbarComponent } from './_cal/calendar-toolbar/calendar-toolbar.component';
+import { CalendarListTopComponent } from './_cal/calendar-list-top/calendar-list-top.component';
+import { CalendarListComponent } from './_cal/calendar-list/calendar-list.component';
 
 
 
@@ -133,6 +138,11 @@ import { SimonSaysComponent } from './doodles/interactive/simon-says/simon-says.
     GmailSnackbarComponent,
     GmailLoadingComponent,
     SimonSaysComponent,
+    CalendarComponent,
+    MapsComponent,
+    CalendarToolbarComponent,
+    CalendarListTopComponent,
+    CalendarListComponent,
   ],
   imports: [
     BrowserModule,

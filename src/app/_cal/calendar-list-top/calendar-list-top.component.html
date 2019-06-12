@@ -1,0 +1,28 @@
+<div class="list-top">
+
+  <div class="left-side">
+
+    <div class="current-date">
+      <span class="today" [innerHtml]="today">Mon</span>
+      <span class="date" [innerHtml]="date">10</span>
+    </div>
+
+  </div>
+
+
+  <section class="right-side">
+
+    <div *ngFor="let event of events">
+      <div
+        class="event-item"
+        [ngClass]="{'event-item--doodle' : event.isDoodle}"
+        [style.backgroundImage]="'url(' + event.img + ')'"
+        >
+        <span [innerHtml]="event.title"></span>
+      </div>
+    </div>
+
+  </section>
+
+
+</div>

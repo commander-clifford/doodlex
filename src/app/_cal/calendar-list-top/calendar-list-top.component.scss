@@ -1,0 +1,55 @@
+.list-top {
+  position: relative;
+  z-index: 1;
+  background: white;
+  display: flex;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+
+  .left-side {
+    width: 60px;
+    flex: 0 0 60px;
+  }
+
+  .right-side {
+    border-left: 1px solid #DDD;
+    width: 100%;
+    margin-right: .2em;
+    padding-left: .2em;
+  }
+
+  .event-item {
+    display: block;
+    border-radius: .2em;
+    margin: 0 0 .2em 0;
+    padding: .2em;
+    background: DarkCyan;
+    color: white;
+
+    &--doodle {
+      background-size: cover;
+      background-position: center center;
+      padding: 8em .2em .2em .2em;
+    }
+  }
+
+  .current-date {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .today {
+      display: block;
+      color: dodgerblue;
+    }
+    .date {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: dodgerblue;
+      color: white;
+      border-radius: 40px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+}

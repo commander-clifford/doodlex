@@ -1,0 +1,30 @@
+<div class="list">
+
+
+
+
+      <table>
+        <tr *ngFor="let event of events">
+          <td class="left-side">
+            <span style="display: block; width:58px">
+              <span class="time" [innerHtml]="event.time"></span>
+            </span>
+          </td>
+          <td class="right-side" valign="top">
+            <div
+              *ngIf="event.title"
+              [id]="event.title"
+              class="event-item"
+              [ngClass]="{'event-item--active' : event.willAttend, 'event-item--half' : event.duration == 0.5, 'event-item--hour' : event.duration == 1, 'event-item--hourandhalf' : event.duration == 1.5}"
+              >
+              <span [innerHtml]="event.title"></span>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+
+
+
+
+</div>

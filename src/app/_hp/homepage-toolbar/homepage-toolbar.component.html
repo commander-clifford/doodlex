@@ -90,11 +90,56 @@
       </button>
 
       <button
-        (click)="prototypeClick('Apps');"
+
+        [matMenuTriggerFor]="menu"
         mat-icon-button
         >
         <mat-icon aria-label="Apps Icon">apps</mat-icon>
       </button>
+      <mat-menu #menu="matMenu">
+        <button
+          mat-menu-item
+          routerLink="/calendar/">
+          <mat-icon>calendar_today</mat-icon>
+          <span>Calendar</span>
+        </button>
+        <button
+          mat-menu-item
+          routerLink="/maps/">
+          <mat-icon>maps</mat-icon>
+          <span>Maps</span>
+        </button>
+        <button
+          mat-menu-item disabled
+          routerLink="/calendar/">
+          <mat-icon>code</mat-icon>
+          <span>Other apps</span>
+        </button>
+        <button
+          mat-menu-item disabled
+          routerLink="/calendar/">
+          <mat-icon>code</mat-icon>
+          <span>Other apps</span>
+        </button>
+      </mat-menu>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <button
         (click)="prototypeClick('Account');"

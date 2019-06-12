@@ -1,0 +1,15 @@
+mat-toolbar {
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  section {
+    > * {
+      display: inline-block;
+      margin: 0;
+    }
+  }
+  > section:first-of-type {
+
+  }
+}

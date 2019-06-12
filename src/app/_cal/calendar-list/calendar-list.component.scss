@@ -1,0 +1,68 @@
+.list {
+  margin-top: 203px;
+  background: white;
+  display: flex;
+  // padding-top: .2em;
+  .left-side {
+    width: 60px;
+    flex: 0 0 60px;
+  }
+
+  .right-side {
+    border-left: 1px solid #DDD;
+    width: 100%;
+    margin-right: .2em;
+    padding-left: .2em;
+  }
+
+  .event-item {
+    display: block;
+    border-radius: .2em;
+    margin: 0 0 .2em 0;
+    padding: .2em;
+    width: 98%;
+    border: 1px solid DarkCyan;
+    color: DarkCyan;
+
+    &--active {
+      background: DarkCyan;
+      color: white;
+    }
+    &--half {
+      height: 1*30px
+    }
+    &--hour {
+      height: 2*30px
+    }
+    &--hourandhalf {
+      position: absolute;
+      height: 3*30px
+    }
+  }
+
+  .time {
+    position: absolute;
+    top: -8px;
+    right: 8px;
+    background: white;
+    padding-left: 2em;
+    font-size: 0.8em;
+    padding-right: .25em;
+    color: grey;
+  }
+
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  tr {
+    height: 60px;
+    border-collapse: collapse;
+    td {
+      position: relative;
+      border-bottom: 1px solid #DDD;
+      border-collapse: collapse;
+    }
+  }
+}
