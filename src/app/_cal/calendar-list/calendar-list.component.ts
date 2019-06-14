@@ -35,16 +35,25 @@ export class CalendarListComponent implements OnInit {
     {
       time: '08:00',
       title: 'Standup',
+      willAttend: true,
     },
     {
       time: '09:00',
+      title: 'Creative Review',
+      deets: 'SFO-1MST-15',
+      willAttend: true,
+      duration: 1
     },
     {
       time: '10:00',
+      title: 'Project Retrospective',
+      willAttend: false,
+      duration: 0.5
     },
     {
       time: '11:00',
       title: 'Team lunch',
+      deets: 'Let\'s meet at the cafe',
       willAttend: true,
       duration: 1.5
     },

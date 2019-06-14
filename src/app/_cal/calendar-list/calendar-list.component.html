@@ -17,7 +17,9 @@
               class="event-item"
               [ngClass]="{'event-item--active' : event.willAttend, 'event-item--half' : event.duration == 0.5, 'event-item--hour' : event.duration == 1, 'event-item--hourandhalf' : event.duration == 1.5}"
               >
-              <span [innerHtml]="event.title"></span>
+              <span class="title" [innerHtml]="event.title"></span>
+              <br>
+              <span class="deets" [innerHtml]="event.deets"></span>
             </div>
           </td>
         </tr>

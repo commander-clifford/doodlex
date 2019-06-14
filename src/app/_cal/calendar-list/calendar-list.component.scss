@@ -1,5 +1,5 @@
 .list {
-  margin-top: 203px;
+  margin-top: 266.5px;
   background: white;
   display: flex;
   // padding-top: .2em;
@@ -37,6 +37,14 @@
     &--hourandhalf {
       position: absolute;
       height: 3*30px
+    }
+
+    .title {
+      font-size: 0.9em;
+    }
+    .deets {
+      font-weight: 300;
+      font-size: 0.9em;
     }
   }
 

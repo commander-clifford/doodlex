@@ -16,9 +16,29 @@
       <div
         class="event-item"
         [ngClass]="{'event-item--doodle' : event.isDoodle}"
-        [style.backgroundImage]="'url(' + event.img + ')'"
         >
         <span [innerHtml]="event.title"></span>
+
+
+        <div
+          *ngIf="event.isDoodle"
+          (click)="event.isDoodle ? openDoodleCard($event) : null"
+          [ngClass]="{'event-item--doodle' : event.isDoodle}"
+          [style.backgroundImage]="'url(' + event.img + ')'"
+          >
+          <span class="desc" [innerHtml]="event.title"></span>
+
+          <span class="action">
+            <mat-icon>play_arrow</mat-icon>
+          </span>
+        </div>
+
+
+
+
+
+
+
       </div>
     </div>
 
