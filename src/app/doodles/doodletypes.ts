@@ -379,7 +379,7 @@ export const DOODLETYPES: Doodletype[] = [
     scribbleUrl: 'https://www.google.com/doodles/earth-day-2017',
     scribble: `Happy Earth Day 2017!<br><br>Today, we honor the rich, vast Earth that’s sustained generations before us and continues to nurture life and inspire wonder. At an estimated 4.543 billion years of age, the Earth is still the only known object in the Universe known to harbor life. It’s also the densest planet in the Solar System and the largest of the four terrestrial planets. That’s quite an awe-inspiring roster of qualities, if you ask us.<br><br>Today’s Doodle follows the story of a fox who dreams about an Earth that’s been polluted and adversely affected by climate change. The fox wakes with a startle, and urgently starts making small lifestyle changes to care for the Earth. Along the way, the fox enlists friends – including Momo the cat, and Google Weather’s favorite frog – to join its quest to protect and nurture the environment.<br><br>To combat things like coral bleaching and pollution, the three eco-rangers are inspired to take action such as eating less meat, carpooling, and unplugging unused electronic devices. That’s some heroic work for tiny animals!<br><br>Celebrating Earth Day on Google Search<br><br>But the Earth Day celebration doesn’t end there! By clicking beyond the Doodle to Google Search, you’ll find easy Earth Day tips to help you do your part in saving our planet, including supporting critical conservation efforts such as wildlife conservation with World Wildlife Fund, coral reef conservation with The Ocean Agency, and rainforest conservation with The Jane Goodall Institute.`,
     triggers: ['earth day','earth','earth day 2017'],
-    promo: "Happy Earth Day 2017!<br><br>Today, we honor the rich, vast Earth that’s sustained generations before us and continues to nurture life and inspire wonder.",
+    promo: "First Day of Summer 2019",
     archive: null,
     imgs: [
       { url: './assets/results/sirindhorn-bird_1.png', width: 693/2, height: 512/2, alt: 'alt text' },
@@ -430,7 +430,9 @@ export const DOODLETYPES: Doodletype[] = [
       },
       gmail: {
         primaryColor: '#c2e5ec',
-        cardElementsColor: '#2F5E5D',
+        cardElementsColor: '#1a73e8',
+        bgColor: '#fff0c2',
+        borderColor: '#facb73',
         content: {
           background: 'url(./assets/doodle-styles/meteor-content-top.png) left top / contain no-repeat, url(./assets/doodle-styles/meteor-content.png) left bottom / contain no-repeat, #131828',
         },
@@ -505,47 +507,50 @@ export const DOODLETYPES: Doodletype[] = [
         },
         levelTwo: {},
         inCard: {
-          url: './assets/logos/earth-day--gmail--card.png',
+          url: './assets/doodle-styles/earth-day.png',
           name: 'GMail',
-          width: 215/2,
-          height: 206/2,
+          width: 392,
+          height: 191,
         },
       },
       srp: {
         fullReplace: {
-          url: './assets/logos/meteor--srp-2x.png',
+          url: './assets/logos/earth-day-2019--standard.png',
           name: 'Geminid Metoer Shower',
-          width: 92,
-          height: 30,
+          width: 103,
+          height: 37,
         },
         openLetterReplace: {
-          url: './assets/logos/meteor--srp-2x.png',
+          url: './assets/logos/earth-day-2019--standard.png',
           name: 'Geminid Metoer Shower',
-          width: 92,
-          height: 30,
+          width: 103,
+          height: 37,
         },
         letterReplace: {
-          url: './assets/logos/meteor--srp-2x.png',
+          url: './assets/logos/earth-day-2019--standard.png',
           name: 'Geminid Metoer Shower',
-          width: 92,
-          height: 30,
+          width: 103,
+          height: 37,
         },
       },
       small: {
-        url: './assets/logos/the-geminid-meteor-shower-2018--2x.gif',
+        url: './assets/doodle-styles/earth-day.png',
         name: 'Geminid Metoer Shower',
         width: 160,
         height: 56,
       },
       standard: {
-        url: './assets/logos/the-geminid-meteor-shower-2018--2x.gif',
+        url: './assets/doodle-styles/earth-day.png',
         name: 'Geminid Metoer Shower',
-        width: 500,
-        height: 200,
+        width: 392,
+        height: 191,
         offset: -80
       }
     },
   },
+
+
+
 
   // Sirindhorn Bird
   {

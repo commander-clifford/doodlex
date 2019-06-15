@@ -56,8 +56,49 @@
       <!-- LOGO -->
       <app-srp-logo
         class="srp-toolbar__logo"
+        [matMenuTriggerFor]="doodleInfo"
+        #trigger="matMenuTrigger"
+        (mouseenter)="trigger.openMenu()"
+
         >
       </app-srp-logo>
+
+
+
+
+      <mat-menu
+        (mouseleave)="trigger.closeMenu()"
+        [overlapTrigger]="false"
+        #doodleInfo="matMenu"
+        class="custom"
+        xPosition="after"
+        yPosition="above">
+
+        <app-doodle-card>
+        </app-doodle-card>
+
+      </mat-menu>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <app-search-bar
         class="primary"

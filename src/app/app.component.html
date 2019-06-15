@@ -38,7 +38,7 @@
       <router-outlet #o="outlet"></router-outlet>
     </div>
 
-    <div class="" [style.display]="controlPanelOpen ? 'none' : 'block'">
+    <div class="" [style.display]="controlPanelOpen ? 'block' : 'none'">
       <div class="cdkDrag" cdkDrag>
         <app-app-menu local="{{getState(o)}}"></app-app-menu>
       </div>

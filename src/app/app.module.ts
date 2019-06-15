@@ -80,6 +80,7 @@ import { GmailThemesComponent } from './_gm/gmail-themes/gmail-themes.component'
 import { GmailSnackbarComponent } from './_gm/gmail-snackbar/gmail-snackbar.component';
 import { GmailLoadingComponent } from './_gm/gmail-loading/gmail-loading.component';
 import { SimonSaysComponent } from './doodles/interactive/simon-says/simon-says.component';
+import { DoodleCardComponent } from './doodles/doodle-card/doodle-card.component';
 
 
 
@@ -133,6 +134,7 @@ import { SimonSaysComponent } from './doodles/interactive/simon-says/simon-says.
     GmailSnackbarComponent,
     GmailLoadingComponent,
     SimonSaysComponent,
+    DoodleCardComponent,
   ],
   imports: [
     BrowserModule,

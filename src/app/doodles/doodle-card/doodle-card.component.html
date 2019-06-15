@@ -1,0 +1,78 @@
+<div
+  class="share-component"
+  >
+
+  <mat-card
+    class="share-card"
+    [style.color]="this.doodletypes[this.globals.activeDoodleID].styles.gmail.primaryColor ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.cardElementsColor : null"
+    [style.backgroundColor]="this.doodletypes[this.globals.activeDoodleID].styles.gmail.bgColor ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.bgColor : null"
+    [style.borderColor]="this.doodletypes[this.globals.activeDoodleID].styles.gmail.borderColor ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.borderColor : null"
+    >
+
+    <mat-card-header>
+
+      <a
+        style="position: relative;width: 100%;display: flex;align-items: center;justify-content: center;"
+        *ngIf="!this.doodletypes[this.globals.activeDoodleID].isInteractiveDoodle"
+        routerLink="/results/{{this.doodletypes[this.globals.activeDoodleID].triggers[0]}}"
+        [queryParams]="{ doodleID: this.doodletypes[this.globals.activeDoodleID].id }"
+        target="_blank"
+        [matTooltip]="'Search for '+this.doodletypes[this.globals.activeDoodleID].name"
+        [matTooltipPosition]="'after'"
+        matTooltipShowDelay="800"
+        >
+        <img
+          style="cursor: pointer;"
+          [src]="this.doodletypes[this.globals.activeDoodleID].logo.gmail.inCard.url"
+          alt="alt text"
+          [width]="this.doodletypes[this.globals.activeDoodleID].logo.gmail.inCard.width"
+          [height]="this.doodletypes[this.globals.activeDoodleID].logo.gmail.inCard.height"
+        />
+
+      </a>
+
+    </mat-card-header>
+
+    <mat-card-content>
+
+        <p style="text-align: center; font-size: 1.5em; margin: 0.5em auto 0em;" [innerHtml]="this.doodletypes[this.globals.activeDoodleID].desc"></p>
+
+        <p style="font-size: 1.4em;" [style.color]="this.doodletypes[this.globals.activeDoodleID].styles.gmail.primaryColor ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.cardElementsColor : null">
+          <span [innerHtml]="this.doodletypes[this.globals.activeDoodleID].promo"></span>
+          <!-- <a
+            class="readme"
+            [href]="this.doodletypes[this.globals.activeDoodleID].scribbleUrl"
+            target="_blank"
+            >
+            read more...
+          </a> -->
+        </p>
+
+
+    </mat-card-content>
+
+    <mat-divider [style.borderColor]="this.doodletypes[this.globals.activeDoodleID].styles.gmail.borderColor ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.borderColor : null"
+></mat-divider>
+
+    <mat-card-actions>
+
+      <button
+        [style.borderColor]="this.doodletypes[this.globals.activeDoodleID].styles.gmail.borderColor ? this.doodletypes[this.globals.activeDoodleID].styles.gmail.borderColor : null"
+        mat-button
+        routerLink="/search/"
+        >
+        Google.com
+      </button>
+
+      <button
+        mat-button
+        routerLink="/results/first day of summer 2019"
+        >
+        Learn More
+      </button>
+
+    </mat-card-actions>
+
+  </mat-card>
+
+</div>

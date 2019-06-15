@@ -1,0 +1,244 @@
+@import "../../../variables.scss";
+
+.mat-menu-content:not(:empty){
+  padding: 0 !important;
+}
+// .cdk-overlay-container{
+//     left: 100px;
+//     top: 100px;
+// }
+// .cdk-overlay-connected-position-bounding-box{
+//     top:0 !important;
+//
+// }
+
+@Keyframes slideDown {
+ 0%{ opacity: 0 }
+ 100%{
+  opacity: 1;
+  transform: translateY(0%);
+ }
+}
+
+.archive-panel {
+    border: none !important;
+    background-color: transparent;
+
+    // .mat-expansion-indicator {
+    //   display: none;
+    // }
+    .mat-expansion-panel-header-title {
+      margin: 0;
+    }
+
+    &-header {
+      background-color: transparent !important;
+      padding: 0;
+      &:hover {
+        background-color: transparent !important;
+      }
+    }
+
+}
+
+// ::ng-deep .cdk-overlay-pane{
+//   top: 0 !important;
+//   position: absolute !important;
+//   transform: translateY(-250%);
+//   animation: slideDown 0.5s forwards 0s ease-in;
+// }
+//
+// ::ng-deep .cdk-overlay-container > * {
+//  animation: none;
+// }
+
+.share-sheet {
+  position: absolute;
+  top: 72px;
+  right: 2em;
+  padding: 0;
+  transform: translateY(-250%);
+  // animation: slideDown 0.5s forwards 0s ease-in;
+}
+
+.share-component {
+  position: relative;
+  border-radius: 16px;
+
+  .close {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    z-index: 9;
+  }
+
+  .interactive {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+  }
+
+
+
+  mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    height: 40px;
+    // width: calc(100% + 36px);
+    // margin-top: -0.5em;
+    // margin-left: -1em;
+    // margin-right: -1em;
+    // margin-bottom: 1em;
+    background: #4B4B4B;
+    color: white;
+  }
+
+  mat-card {
+    border: 1px solid;
+    min-width: 340px;
+    width: 340px;
+    max-width: 340px;
+    transition: max-height 400ms ease-in-out;
+    overflow: scroll;
+    padding: 0;
+    &-header {
+
+      position: relative;
+      width: 100%;
+
+
+      padding: 0 0.5em 0.5em;
+      margin-top: 1.5em !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 50%;
+        background: #999999;
+        width: 80px;
+        height: 80px;
+      }
+    }
+    &-content {
+      padding: 0 0.5em;
+    }
+    &-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 0 !important;
+      margin-left: 0;
+      margin-right: 0;
+      // padding: 0.5em;
+      button {
+        margin: 0 !important;
+      }
+    }
+  }
+
+  mat-card-content {
+
+    // margin: 0 auto;
+    // width: 80%;
+    line-height: 1.5;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  mat-card-actions {
+
+    padding: 0;
+
+    button {
+      width: 50%;
+      margin: 0;
+      padding: 4px 0;
+      &:first-of-type {
+        border-right: 1px solid;
+      }
+    }
+
+  }
+  .full-doodle {
+    // cursor: pointer;
+    outline: none;
+  }
+
+  .doodle-wrapper {
+    position: relative;
+    padding: 18px 0 18px;
+    .button-group {
+      position: absolute;
+      top: -8px;
+      right: 0;
+      &.two {
+        bottom: -80px;
+        top: auto;
+        left: 50%;
+        transform: translate(-50%,0%);
+        right: auto;
+      }
+    }
+  }
+
+
+}
+
+.share-card {
+  min-width: 420px;
+  max-width: 544px;
+  margin: 0 auto;
+  text-align: center;
+  // max-height: 420px;
+  overflow: scroll !important;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  h1 {
+    margin: 0;
+  }
+  .readme {
+    color:#1a73e8;
+    text-decoration: none;
+    &:hover {
+      color: #4285f4;
+    }
+  }
+}
+
+.carousel {
+
+  display: flex;
+  overflow: scroll;
+  width: calc(100% + 2em);
+  margin-left: -1em;
+  margin-right: -1em;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+  }
+
+  img {
+    height: 256px;
+    margin: 1em;
+    border-radius: 1em;
+    box-shadow: -1px 1px 4px 1px rgba(0,0,0,0.2);
+  }
+}
