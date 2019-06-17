@@ -58,25 +58,21 @@
         class="srp-toolbar__logo"
         [matMenuTriggerFor]="doodleInfo"
         #trigger="matMenuTrigger"
-        (mouseenter)="trigger.openMenu()"
+        (mouseenter)="openMyMenu()"
 
         >
       </app-srp-logo>
 
-
-
-
       <mat-menu
-        (mouseleave)="trigger.closeMenu()"
         [overlapTrigger]="false"
         #doodleInfo="matMenu"
         class="custom"
         xPosition="after"
-        yPosition="above">
-
-        <app-doodle-card>
-        </app-doodle-card>
-
+        yPosition="below">
+        <span (mouseleave)="closeMyMenu()">
+          <app-doodle-card>
+          </app-doodle-card>
+        </span>
       </mat-menu>
 
 

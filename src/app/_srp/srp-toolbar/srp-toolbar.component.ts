@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, HostListener, Directive,ElementRef,Renderer } from '@angular/core';
+import { Component, OnInit, Input, HostListener, Directive,ElementRef,Renderer,ViewChild } from '@angular/core';
+import {MatMenuTrigger} from '@angular/material'
 import { MessageService } from '../../messages/message.service';
 import { SEARCHRESULTS } from '../../search-results/search-results';
 import { DOODLETYPES } from '../../doodles/doodletypes';
@@ -27,6 +28,7 @@ import {
 
 export class SrpToolbarComponent implements OnInit {
 
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
   @Input() query: string;
 
   private doodletypes = DOODLETYPES;
@@ -157,6 +159,13 @@ export class SrpToolbarComponent implements OnInit {
 
 
     }
+  }
+
+  private openMyMenu() {
+    this.trigger.openMenu();
+  }
+  private closeMyMenu() {
+    this.trigger.closeMenu();
   }
 
   private runUpdateQuery(event: any): void {

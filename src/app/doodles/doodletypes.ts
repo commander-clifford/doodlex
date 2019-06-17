@@ -363,32 +363,25 @@ export const DOODLETYPES: Doodletype[] = [
     },
   },
 
-  // Earth Day (Geminid Meteor Shower)
+  // First Day of Summer
   {
-    name: 'Earth Day',
+    name: 'First Day of Summer',
     id: 2,
-    blogLink: 'https://www.google.com/doodles/earth-day-2017',
+    blogLink: 'https://www.google.com/doodles/earth-day-2019',
     isActive: true,
     isDoodle: true,
     isInteractiveDoodle: false,
     highlight: false,
     tagGmail: true,
-    tagSrp: false,
+    tagSrp: true,
     desc: '',
-    intro: 'Happy Earth Day! 🌎',
-    scribbleUrl: 'https://www.google.com/doodles/earth-day-2017',
-    scribble: `Happy Earth Day 2017!<br><br>Today, we honor the rich, vast Earth that’s sustained generations before us and continues to nurture life and inspire wonder. At an estimated 4.543 billion years of age, the Earth is still the only known object in the Universe known to harbor life. It’s also the densest planet in the Solar System and the largest of the four terrestrial planets. That’s quite an awe-inspiring roster of qualities, if you ask us.<br><br>Today’s Doodle follows the story of a fox who dreams about an Earth that’s been polluted and adversely affected by climate change. The fox wakes with a startle, and urgently starts making small lifestyle changes to care for the Earth. Along the way, the fox enlists friends – including Momo the cat, and Google Weather’s favorite frog – to join its quest to protect and nurture the environment.<br><br>To combat things like coral bleaching and pollution, the three eco-rangers are inspired to take action such as eating less meat, carpooling, and unplugging unused electronic devices. That’s some heroic work for tiny animals!<br><br>Celebrating Earth Day on Google Search<br><br>But the Earth Day celebration doesn’t end there! By clicking beyond the Doodle to Google Search, you’ll find easy Earth Day tips to help you do your part in saving our planet, including supporting critical conservation efforts such as wildlife conservation with World Wildlife Fund, coral reef conservation with The Ocean Agency, and rainforest conservation with The Jane Goodall Institute.`,
-    triggers: ['earth day','earth','earth day 2017'],
+    intro: 'First Day of Summer',
+    scribbleUrl: 'https://www.google.com/doodles/earth-day-2019',
+    scribble: `Happy Earth Day 2019! This year's annual Earth Day Doodle takes us around the planet we call home to discover some of the awe-inspiring organisms which inhabit it. Specifically, the interactive slideshow Doodle explores six organisms across elevations—along with their earthly superlative!`,
+    triggers: ['First day of summer 2019', 'summer'],
     promo: "First Day of Summer 2019",
     archive: null,
-    imgs: [
-      { url: './assets/results/sirindhorn-bird_1.png', width: 693/2, height: 512/2, alt: 'alt text' },
-      { url: './assets/results/sirindhorn-bird_2.png', width: 683/2, height: 512/2, alt: 'alt text' },
-      { url: './assets/results/sirindhorn-bird_3.png', width: 406/2, height: 512/2, alt: 'alt text' },
-      { url: './assets/results/sirindhorn-bird_4.png', width: 507/2, height: 512/2, alt: 'alt text' },
-      { url: './assets/results/sirindhorn-bird_5.png', width: 910/2, height: 512/2, alt: 'alt text' },
-      { url: './assets/results/view-all.png', width: 256/2, height: 512/2, alt: 'alt text' },
-    ],
+    imgs: null,
     styles: {
       hp: {
         cont: {
@@ -548,9 +541,6 @@ export const DOODLETYPES: Doodletype[] = [
       }
     },
   },
-
-
-
 
   // Sirindhorn Bird
   {

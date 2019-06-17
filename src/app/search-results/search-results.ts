@@ -1518,6 +1518,103 @@ export const SEARCHRESULTS: SearchResult[] = [
       nextQry: null
     },
     scibox: null,
+  },
+
+
+  // hinamatsuri
+  {
+    name: 'First day of Summer 2019',
+    coorDoodleId: 2,
+    queries: ['first day of summer 2019', 'first day of summer','summer' ],
+    category: 'Season',
+    topStories: null,
+    abstract: [{
+      url: "https://www.google.com/doodles/summer-solstice-2018-northern-hemisphere",
+      title: 'Google celebrates the first day of Summer 2019',
+      desc: "To-do list filling up? Been putting off that pesky task for far too long? Well, today’s the day to finally get it done — June 21 marks this year’s summer solstice: the longest day of the year for the northern hemisphere.",
+      tags: "",
+    }],
+    results: [
+      {
+        title: "Summer Solstice 2019: When Is the First Day of Summer and Why Is It ...",
+        url: "https://www.newsweek.com › Tech & Science › Astronomy › Meteorology › Earth",
+        desc: "3 hours ago - We are fast approaching the 2019 summer solstice in the northern hemisphere—the point in the year at which the Earth's north pole is tilted furthest toward the sun. ... In contrast, those in the southern hemisphere will experience the shortest day of the year with the least sunlight ...",
+      },
+      {
+        title: "Summer Solstice 2019: When Is the First Day of Summer and Why Is It ...",
+        url: "https://www.newsweek.com › Tech & Science › Astronomy › Meteorology › Earth",
+        desc: "3 hours ago - We are fast approaching the 2019 summer solstice in the northern hemisphere—the point in the year at which the Earth's north pole is tilted furthest toward the sun. ... In contrast, those in the southern hemisphere will experience the shortest day of the year with the least sunlight ...",
+      },
+      {
+        title: "Summer Solstice 2019: When Is the First Day of Summer and Why Is It ...",
+        url: "https://www.newsweek.com › Tech & Science › Astronomy › Meteorology › Earth",
+        desc: "3 hours ago - We are fast approaching the 2019 summer solstice in the northern hemisphere—the point in the year at which the Earth's north pole is tilted furthest toward the sun. ... In contrast, those in the southern hemisphere will experience the shortest day of the year with the least sunlight ...",
+      },
+      {
+        title: "Summer Solstice 2019: When Is the First Day of Summer and Why Is It ...",
+        url: "https://www.newsweek.com › Tech & Science › Astronomy › Meteorology › Earth",
+        desc: "3 hours ago - We are fast approaching the 2019 summer solstice in the northern hemisphere—the point in the year at which the Earth's north pole is tilted furthest toward the sun. ... In contrast, those in the southern hemisphere will experience the shortest day of the year with the least sunlight ...",
+      },
+      {
+        title: "Summer Solstice 2019: When Is the First Day of Summer and Why Is It ...",
+        url: "https://www.newsweek.com › Tech & Science › Astronomy › Meteorology › Earth",
+        desc: "3 hours ago - We are fast approaching the 2019 summer solstice in the northern hemisphere—the point in the year at which the Earth's north pole is tilted furthest toward the sun. ... In contrast, those in the southern hemisphere will experience the shortest day of the year with the least sunlight ...",
+      },
+
+
+
+
+
+
+
+
+
+
+    ],
+    searchSuggestions: [
+      {
+        q: "What is the purpose of Summer Time?",
+        a: "Summer Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+      },
+      {
+        q: "What does Summer Time mean?",
+        a: "Summer Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+      },
+      {
+        q: "What is Summer Time about?",
+        a: "Summer Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+      },
+      {
+        q: "Will there be a next Summer Time?",
+        a: "Summer Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+      },
+
+    ],
+    egg: null,
+    knowledgePanel: {
+      title: 'Summer Time',
+      category: 'Season',
+      subTitle: 'Summer',
+      desc: "When is the Summer Solstice 2019? See when the first day of summer is—plus, solstice facts, folklore, and more from The Old Farmer's Almanac!",
+      heroImages: [
+        { url: "./assets/results/summer__result_1--standard.gif", cols: 3, rows: 6, alt: 'Summer Time' },
+        { url: "./assets/results/summer__result_2--standard.jpg", cols: 1, rows: 3, alt: 'Summer Time' },
+        // { url: "./assets/results/summer__result_3--standard.jpg", cols: 1, rows: 3, alt: 'Summer Time' },
+        { url: "./assets/results/summer__result_5--standard.jpg", cols: 3, rows: 3, alt: 'Summer Time' },
+        { url: "./assets/results/summer__result_4--standard.jpg", cols: 1, rows: 3, alt: 'Summer Time' },
+        { url: "./assets/results/summer__result_7--standard.jpeg", cols: 2, rows: 3, alt: 'Summer Time' },
+        { url: "./assets/results/summer__result_6--standard.jpg", cols: 1, rows: 3, alt: 'Summer Time' },
+      ],
+    },
+    funbox: {
+      title: "Friday, June 21",
+      desc: "Summer 2019 in Northern Hemisphere",
+      message: null,
+      imgUrl: null,
+      class: "Summer",
+      nextQry: null
+    },
+    scibox: null,
   }
 
   // Ideas for Results //
