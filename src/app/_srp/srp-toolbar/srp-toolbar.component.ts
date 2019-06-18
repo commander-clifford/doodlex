@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, HostListener, Directive,ElementRef,Renderer,ViewChild } from '@angular/core';
-import {MatMenuTrigger} from '@angular/material'
+import {MatMenuTrigger} from '@angular/material';
 import { MessageService } from '../../messages/message.service';
 import { SEARCHRESULTS } from '../../search-results/search-results';
 import { DOODLETYPES } from '../../doodles/doodletypes';

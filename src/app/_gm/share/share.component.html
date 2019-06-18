@@ -102,10 +102,10 @@
         <button
           *ngIf="!this.globals.gmailDoodleOptIn"
           mat-button
-          (click)="this.globals.optOutWindowIsShown = !this.globals.optOutWindowIsShown; $event.stopPropagation();"
+          (click)="doodleOptOut()"
           >
           <!-- <mat-icon>info_outlined</mat-icon> -->
-          What is this?
+          Turn this off
         </button>
 
 
