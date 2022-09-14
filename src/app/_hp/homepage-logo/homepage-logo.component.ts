@@ -10,13 +10,13 @@ import { Globals } from '../../globals';
 
 export class HomepageLogoComponent implements OnInit {
 
-  private query;
+  public query;
 
   @Input() logo: object;
   @Input() searchQuery: string;
-  @Input() doodle: string;
+  @Input() doodle: any;
 
-  constructor(private globals: Globals) {}
+  constructor(public globals: Globals) {}
 
   ngOnInit() {}
 

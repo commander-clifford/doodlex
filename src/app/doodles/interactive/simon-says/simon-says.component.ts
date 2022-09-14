@@ -16,26 +16,26 @@ import { ViewEncapsulation } from '@angular/core';
 export class SimonSaysComponent implements OnInit {
 
 
-    private timer = 0; //this is the timer var; used for the game timer
-    private gameTimer = true;
-    private gameIO = false; // this is the on / off indicator
-    private flashDuration = 200; // this is how fast the game buttons flash on during play
-    private series = []; // this is where the game series is stored
-    private seriesDots = [];
+    public timer = 0; //this is the timer var; used for the game timer
+    public gameTimer = true;
+    public gameIO = false; // this is the on / off indicator
+    public flashDuration = 200; // this is how fast the game buttons flash on during play
+    public series = []; // this is where the game series is stored
+    public seriesDots = [];
 
-    private curPlay = 0;
-    private numButtons = 4; // this is the number of game buttons; 4 is default
+    public curPlay = 0;
+    public numButtons = 4; // this is the number of game buttons; 4 is default
 
-    private bColors = ['red','green','yellow','blue'];
-    private buttons = document.getElementsByClassName('gameButton'); // these are the game buttons
-    private messageContainer; // these are the game buttons
-    private seriesContainer; // these are the game buttons
-    private wrapper; // these are the game buttons
+    public bColors = ['red','green','yellow','blue'];
+    public buttons = document.getElementsByClassName('gameButton'); // these are the game buttons
+    public messageContainer; // these are the game buttons
+    public seriesContainer; // these are the game buttons
+    public wrapper; // these are the game buttons
 
-    // private randomButtonNumber = ''; // this is the randomly chosen button on each turn
-    private stopButton;
-    private playButton;
-    private gameContainer;
+    // public randomButtonNumber = ''; // this is the randomly chosen button on each turn
+    public stopButton;
+    public playButton;
+    public gameContainer;
 
 
 
@@ -102,7 +102,7 @@ export class SimonSaysComponent implements OnInit {
 
     }
 
-    private startGame():void {
+    public startGame():void {
       this.gameIO = true;
       // setTimeout(function(){this.timerCounter()}.bind(this), 1000);
       this.playButton.setAttribute('style','display: none;');
@@ -110,7 +110,7 @@ export class SimonSaysComponent implements OnInit {
       this.aiChooser();
     }
 
-    private stopGame():void {
+    public stopGame():void {
       this.gameIO = false;
 
       this.resetGame();
@@ -123,7 +123,7 @@ export class SimonSaysComponent implements OnInit {
       // $('#step').html(this.curPlay);
     }
 
-    private playGame(e):void {
+    public playGame(e):void {
 
       console.log('playGame',e);
       console.log('playGame',e.srcElement);
@@ -177,7 +177,7 @@ export class SimonSaysComponent implements OnInit {
       }
     }
 
-    private toggleGameIO(button): void {
+    public toggleGameIO(button): void {
 
       console.log('button',button);
 
@@ -191,13 +191,13 @@ export class SimonSaysComponent implements OnInit {
       }
     }
 
-    private resetTimer(): void {
+    public resetTimer(): void {
       this.timer=0;//reset clicks counter back to 0
       // $('#timer').html(this.timer+':00');//display the new timer position
       this.gameTimer = false;
     }
 
-    private buttonAction(e) {
+    public buttonAction(e) {
 
       e.stopPropagation();
       e.preventDefault();
@@ -221,7 +221,7 @@ export class SimonSaysComponent implements OnInit {
 
     }
 
-    private timerCounter(): void {
+    public timerCounter(): void {
       if(true == this.gameIO && true == this.gameTimer){
         this.timer++;
         var seconds = this.timer %60;
@@ -241,7 +241,7 @@ export class SimonSaysComponent implements OnInit {
     }
 
     // Message Popup
-    private messagePop(message): void {
+    public messagePop(message): void {
 
       let tl = new TimelineMax({
         // repeat: -1,
@@ -282,7 +282,7 @@ export class SimonSaysComponent implements OnInit {
 
     // AI CHOOSER
     // if series exists - animate the series - then choose the next random button
-    private aiChooser(): void {
+    public aiChooser(): void {
       var timeDelay = 400;//speed of random generation for looping button animation
       for (var i = 0; i <= this.series.length; i++) {
 
@@ -370,14 +370,14 @@ export class SimonSaysComponent implements OnInit {
       };
     }
 
-    private resetGame():void {
+    public resetGame():void {
       this.series = [];
       this.seriesDots = [];
       this.curPlay = 0;
       this.resetTimer();
     }
 
-    private determineEnvironment():void {
+    public determineEnvironment():void {
       const ua = navigator.userAgent;
       let isMobile = /Mobile/.test(ua);
       document.body.classList.add(isMobile ? 'mobile' : 'desktop');
@@ -423,14 +423,14 @@ export class SimonSaysComponent implements OnInit {
 
   // -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ //
 
-    // private spin(): void {
+    // public spin(): void {
       // setInterval(function(){
         // $('#gameButtons').css('-webkit-transform: rotate(10deg); -moz-transform: rotate(10deg); -ms-transform: rotate(10deg); transform: rotate(10deg);');
         // $('#gameButtons').css('transform: rotate(0deg);');
       // },1000);
     // }
 
-    // private oldButtonActions(): void {
+    // public oldButtonActions(): void {
     //   // BUTTON TRIGGERS
     //   // this sucks - find a better way to bind functions to buttons
     //   (function(){

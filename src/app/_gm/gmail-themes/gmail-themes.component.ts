@@ -10,10 +10,10 @@ import { Globals } from '../../globals';
 })
 export class GmailThemesComponent implements OnInit {
 
-  private gmailThemes = GMAILTHEMES;
+  public gmailThemes = GMAILTHEMES;
 
   constructor(
-    private globals: Globals,
+    public globals: Globals,
     public dialogRef: MatDialogRef<GmailThemesComponent>,
   ) { }
 

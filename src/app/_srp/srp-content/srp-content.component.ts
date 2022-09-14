@@ -22,18 +22,18 @@ export class SrpContentComponent implements OnInit {
   eehTheme;
   eehStep;
   searchResults: SearchResult[];
-  private selectedSearchResults: object;
-  private showTopStories: boolean;
-  private showKnowledgePanel: boolean;
-  private showSearchSuggestions: boolean;
-  private selectedResult;
-  private searchQuery: string;
-  private doodletypes = DOODLETYPES;
+  public selectedSearchResults: any;
+  public showTopStories: boolean;
+  public showKnowledgePanel: boolean;
+  public showSearchSuggestions: boolean;
+  public selectedResult;
+  public searchQuery: string;
+  public doodletypes = DOODLETYPES;
 
   constructor(
-    private globals: Globals,
-    private route: ActivatedRoute,
-    private searchResultsService: SearchResultsService,
+    public globals: Globals,
+    public route: ActivatedRoute,
+    public searchResultsService: SearchResultsService,
   ) {
 
   }
@@ -113,7 +113,7 @@ export class SrpContentComponent implements OnInit {
 
   }
 
-  private getSearchResult(qry): void {
+  public getSearchResult(qry): void {
     this.selectedSearchResults = this.searchResultsService.getSearchResult(qry);
   }
 

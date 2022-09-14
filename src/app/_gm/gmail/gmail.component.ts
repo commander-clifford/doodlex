@@ -25,10 +25,10 @@ export class GmailComponent implements OnInit {
 
   @ViewChild('gmailDrawer') public sidenav: MatSidenav;
 
-  private doodletypes = DOODLETYPES;
-  private gmailThemes = GMAILTHEMES;
-  private isMobileResolution: boolean;
-  private unreadEmails: object[] = [
+  public doodletypes = DOODLETYPES;
+  public gmailThemes = GMAILTHEMES;
+  public isMobileResolution: boolean;
+  public unreadEmails: object[] = [
     {
       name:'Salit Kulla',
       star: false,
@@ -54,7 +54,7 @@ export class GmailComponent implements OnInit {
       date: '10:11 AM'
     },
   ];
-  private everyThingElse: object[] = [
+  public everyThingElse: object[] = [
     {
       name: "Luis, me, Anastasia",
       star: false,
@@ -250,14 +250,14 @@ export class GmailComponent implements OnInit {
   ];
 
   constructor(
-    private globals: Globals,
-    private sidenavService: SidenavService,
-    private composeService: ComposeService,
-    private appStateService: AppStateService,
-    private bottomSheet: MatBottomSheet,
+    public globals: Globals,
+    public sidenavService: SidenavService,
+    public composeService: ComposeService,
+    public appStateService: AppStateService,
+    public bottomSheet: MatBottomSheet,
     public dialog: MatDialog,
-    private route: ActivatedRoute,
-    private doodleService: DoodleService,
+    public route: ActivatedRoute,
+    public doodleService: DoodleService,
   ) {
     this.doodleService.getADI(this.route);
     this.isMobileResolution = appStateService.getIsMobileResolution();

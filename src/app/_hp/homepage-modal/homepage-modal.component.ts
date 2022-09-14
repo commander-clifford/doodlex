@@ -4,6 +4,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 export interface DialogData {
   animal: string;
   name: string;
+  query: any;
 }
 
 @Component({

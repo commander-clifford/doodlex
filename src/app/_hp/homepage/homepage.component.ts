@@ -18,21 +18,21 @@ const query = (s,a,o={optional:true})=>q(s,a,o);
 
 export class HomepageComponent implements OnInit {
 
-  private doodletypes = DOODLETYPES;
-  private doodle;
+  public doodletypes = DOODLETYPES;
+  public doodle;
 
 
-  private isMobileResolution: boolean;
+  public isMobileResolution: boolean;
 
-  private landingDoodle: string;
+  public landingDoodle: string;
 
   constructor(
-    private appStateService: AppStateService,
-    private doodleService: DoodleService,
-    private route: ActivatedRoute,
-    private router: Router,
-    private messageService: MessageService,
-    private globals: Globals
+    public appStateService: AppStateService,
+    public doodleService: DoodleService,
+    public route: ActivatedRoute,
+    public router: Router,
+    public messageService: MessageService,
+    public globals: Globals
   ) {
 
     this.isMobileResolution = appStateService.getIsMobileResolution();
@@ -64,7 +64,7 @@ export class HomepageComponent implements OnInit {
     this.globals.isMobileResolution = this.isMobileResolution;
   }
 
-  private setLandingDoodle(landingDoodle): void {
+  public setLandingDoodle(landingDoodle): void {
 
     for (var i = 0; i < this.doodletypes.length; i++) {
       if ( this.doodletypes[i].triggers.indexOf(landingDoodle) >= 0 ) {
@@ -77,11 +77,11 @@ export class HomepageComponent implements OnInit {
 
   }
 
-  private prototypeClick(event, message): void {
+  public prototypeClick(event, message): void {
     this.messageService.testAlert(message);
   }
 
-  private reset(): void {
+  public reset(): void {
     this.globals.searchQuery = null;
     this.globals.eggsFound = null;
     this.globals.eehTheme = null;

@@ -8,10 +8,10 @@ import { Globals } from '../../globals';
 })
 export class SrpAbstractComponent implements OnInit {
 
-  selectedResult: object;
+  selectedResult: any;
 
   constructor(
-    private globals: Globals
+    public globals: Globals
   ) {
     console.log('SRP-SUG this.globals.selectedSearchResults',this.globals.selectedSearchResults);
     this.selectedResult = this.globals.selectedSearchResults;

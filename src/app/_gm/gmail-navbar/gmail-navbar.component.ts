@@ -11,11 +11,11 @@ import { GMAILTHEMES } from '../gmail/gmail-themes';
 
 export class GmailNavbarComponent implements OnInit {
 
-  private doodletypes = DOODLETYPES;
-  private gmailThemes = GMAILTHEMES;
+  public doodletypes = DOODLETYPES;
+  public gmailThemes = GMAILTHEMES;
 
   constructor(
-    private globals: Globals,
+    public globals: Globals,
   ) { }
 
   ngOnInit() {

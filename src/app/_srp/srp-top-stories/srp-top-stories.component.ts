@@ -12,11 +12,11 @@ import { Globals } from '../../globals';
 
 export class SrpTopStoriesComponent implements OnInit {
 
-  private searchResults = SEARCHRESULTS;
-  private selectedResult: object;
+  public searchResults = SEARCHRESULTS;
+  public selectedResult: any;
 
   constructor(
-    private globals: Globals
+    public globals: Globals
   ) {
     console.log('SrpTopStoriesComponent:selectedSearchResults',this.globals.selectedSearchResults);
     this.selectedResult = this.globals.selectedSearchResults;

@@ -11,8 +11,8 @@ import { ComposeService } from '../../_gm/compose/compose.service';
 export class SocialShareComponent implements OnInit {
 
   constructor(
-    private composeService: ComposeService,
-    private dialogRef: MatDialogRef<SocialShareComponent>,
+    public composeService: ComposeService,
+    public dialogRef: MatDialogRef<SocialShareComponent>,
 
   ) { }
 

@@ -13,15 +13,15 @@ import { DoodleSheetService } from '../../doodles/doodle-sheet/doodle-sheet.serv
 
 export class DoodleComponent implements OnInit {
 
-  @Input() doodleType: object;
+  @Input() doodleType: any;
   @Input() client: string;
 
   constructor(
-    private globals: Globals,
-    private router: Router,
-    private composeService: ComposeService,
-    private shareService: ShareService,
-    private doodleSheetService: DoodleSheetService,
+    public globals: Globals,
+    public router: Router,
+    public composeService: ComposeService,
+    public shareService: ShareService,
+    public doodleSheetService: DoodleSheetService,
   ) { }
 
   @HostListener('click')

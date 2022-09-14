@@ -11,8 +11,8 @@ export class Doodletype {
   intro: string;
   promo: string;
   triggers: string[];
-  styles: object;
-  logo: object;
+  styles: any;
+  logo: any;
   archive: object;
   imgs: object[];
   scribble: string;

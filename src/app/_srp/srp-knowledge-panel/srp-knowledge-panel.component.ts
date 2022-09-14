@@ -29,19 +29,19 @@ import {
 
 export class SrpKnowledgePanelComponent implements OnInit {
 
-  private audioClip = new Audio();
-  private density: number = 400;
-  private doneOnce: boolean = false;
-  private option2: boolean = false;
-  private isMobileResolution: boolean;
-  private speed: number = 1;
-  private eggsFound: number;
-  private colors = ["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF"];
-  private colorsLength = this.colors.length;
-  private winHeight: number = window.innerHeight;
-  private winWidth: number = window.innerWidth;
+  public audioClip = new Audio();
+  public density: number = 400;
+  public doneOnce: boolean = false;
+  public option2: boolean = false;
+  public isMobileResolution: boolean;
+  public speed: number = 1;
+  public eggsFound: number;
+  public colors = ["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF"];
+  public colorsLength = this.colors.length;
+  public winHeight: number = window.innerHeight;
+  public winWidth: number = window.innerWidth;
 
-  private start = {
+  public start = {
     yMin: 0,
     yMax: 0,
     xMin: 0,
@@ -51,7 +51,7 @@ export class SrpKnowledgePanelComponent implements OnInit {
     opacityMin:0.5,
     opacityMax:0.6,
   };
-  private mid = {
+  public mid = {
     yMin: this.winHeight/2,
     yMax: this.winHeight/2,
     xMin: 100,
@@ -61,7 +61,7 @@ export class SrpKnowledgePanelComponent implements OnInit {
     opacityMin:0.4,
     opacityMax:0.8,
   };
-  private end = {
+  public end = {
     yMin: this.winHeight,
     yMax: this.winHeight,
     xMin: 0,
@@ -71,11 +71,11 @@ export class SrpKnowledgePanelComponent implements OnInit {
     opacityMin:0.8,
     opacityMax:1.0,
   };
-  private selectedResult;
+  public selectedResult;
 
   constructor(
-    private globals: Globals,
-    private appStateService: AppStateService,
+    public globals: Globals,
+    public appStateService: AppStateService,
   ) {
     this.isMobileResolution = appStateService.getIsMobileResolution();
     this.globals.isMobileResolution = this.isMobileResolution;
@@ -107,7 +107,7 @@ export class SrpKnowledgePanelComponent implements OnInit {
 
   }
 
-  private stageEasterScene(): void {
+  public stageEasterScene(): void {
 
     let srpKpHeader = document.getElementById("knowledge-panel__header"); console.log('srpKpHeader',srpKpHeader);
 
@@ -136,7 +136,7 @@ export class SrpKnowledgePanelComponent implements OnInit {
 
   }
 
-  private onMousemove(event: MouseEvent) {
+  public onMousemove(event: MouseEvent) {
 
     // TODO add this only after elements are created
     let srpBgMountains = document.getElementById("srp__bg--mountains") ? document.getElementById("srp__bg--mountains") : null;
@@ -159,7 +159,7 @@ export class SrpKnowledgePanelComponent implements OnInit {
     }
   }
 
-  private onResize(event) {
+  public onResize(event) {
     this.winHeight = window.innerHeight;
     this.winWidth = window.innerWidth;
     this.start.xMax = this.winWidth;
@@ -171,7 +171,7 @@ export class SrpKnowledgePanelComponent implements OnInit {
     this.end.xMax = this.winWidth;
   }
 
-  private findEasterEgg(): void {
+  public findEasterEgg(): void {
 
     console.log('egg',this.doneOnce);
 
@@ -208,7 +208,7 @@ export class SrpKnowledgePanelComponent implements OnInit {
 
   // interations
 
-  private doEasterTriviaEeh():void {
+  public doEasterTriviaEeh():void {
 
     console.log('this.eggsFound',this.eggsFound);
 
@@ -411,7 +411,7 @@ export class SrpKnowledgePanelComponent implements OnInit {
 
   }
 
-  private doXmasEeKp(): void {
+  public doXmasEeKp(): void {
 
     let i;
     let newParticle;
@@ -542,7 +542,7 @@ export class SrpKnowledgePanelComponent implements OnInit {
     // }
   }
 
-  private doXmasEeFs(): void {
+  public doXmasEeFs(): void {
 
     let srp = document.getElementById("srp");
     let srpBg;
@@ -596,7 +596,7 @@ export class SrpKnowledgePanelComponent implements OnInit {
 
   // animation functions
 
-  private growGrass(): void {
+  public growGrass(): void {
 
     const _createClass:any = function () {
       function defineProperties(target, props) {
@@ -793,12 +793,12 @@ export class SrpKnowledgePanelComponent implements OnInit {
     }
   }
 
-  private range(map, prop): void {
+  public range(map, prop): void {
     let min = map[prop + "Min"], max = map[prop + "Max"];
     return min + (max - min) * Math.random();
   }
 
-  private spawn(particle): void {
+  public spawn(particle): void {
 
     // console.log('partID:',particle.id);
     // console.log('partID: even? ', particle.id%2 );
@@ -867,7 +867,7 @@ export class SrpKnowledgePanelComponent implements OnInit {
 
   // utilities (TODO: could be a service?)
 
-  private reset(): void {
+  public reset(): void {
 
     let i;
     var particles = document.getElementsByClassName('particle');

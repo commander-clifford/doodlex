@@ -12,19 +12,19 @@ import { AppStateService } from '../../app-state.service';
 
 export class SearchBarComponent implements OnInit {
 
-  private searchQuery: string;
-  private values: string;
-  private isMobileResolution: boolean;
+  public searchQuery: string;
+  public values: string;
+  public isMobileResolution: boolean;
 
   @Input() page: string;
   @Input() class: string;
 
   constructor(
-    private globals: Globals,
-    private router: Router,
+    public globals: Globals,
+    public router: Router,
     public dialog: MatDialog,
-    private route: ActivatedRoute,
-    private appStateService: AppStateService,
+    public route: ActivatedRoute,
+    public appStateService: AppStateService,
   ) {
 
     route.url.subscribe(() => {
@@ -38,7 +38,7 @@ export class SearchBarComponent implements OnInit {
 
   }
 
-  private runUpdateQuery(event: any): void {
+  public runUpdateQuery(event: any): void {
 
     if(event.code == 'Enter' || event.code == 'NumpadEnter'){
       this.checkResults();
@@ -52,7 +52,7 @@ export class SearchBarComponent implements OnInit {
 
   }
 
-  private checkResults(): void {
+  public checkResults(): void {
     if(this.globals.searchQuery){
       console.log('search for:',this.globals.searchQuery.trim());
       this.router.navigate(["/results/"+this.globals.searchQuery.trim()]);

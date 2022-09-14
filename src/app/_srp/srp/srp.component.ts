@@ -4,14 +4,14 @@ import { DOODLETYPES } from '../../doodles/doodletypes';
 import { DoodleService } from '../../doodles/doodle.service';
 
 import { ActivatedRoute, Router } from '@angular/router';
-import { routerTransition } from '../../animations/router.animations';
+import { Animations } from '../../animations/router.animations';
 import { SearchResultsService } from '../../search-results/search-results.service';
 import { SearchResult } from '../../search-results/search-result';
 import { AppStateService } from '../../app-state.service';
 
 @Component({
   selector: 'app-srp',
-  animations: [ routerTransition ],
+  animations: [ Animations.routerTransition ],
   templateUrl: './srp.component.html',
   styleUrls: ['./srp.component.scss'],
   host: {'(window:resize)': 'onResize($event)'}
@@ -19,7 +19,7 @@ import { AppStateService } from '../../app-state.service';
 
 export class SrpComponent implements OnInit {
 
-  private doodletypes = DOODLETYPES;
+  public doodletypes = DOODLETYPES;
 
   theme;
   themeClass;
@@ -28,20 +28,20 @@ export class SrpComponent implements OnInit {
   eehStep;
   searchResults: SearchResult[];
   // selectedSearchResults: SearchResult;
-  private selectedSearchResults: object;
-  private showTopStories: boolean;
-  private showKnowledgePanel: boolean;
-  private showSearchSuggestions: boolean;
-  private searchQuery: string;
-  private isMobileResolution: boolean;
+  public selectedSearchResults: object;
+  public showTopStories: boolean;
+  public showKnowledgePanel: boolean;
+  public showSearchSuggestions: boolean;
+  public searchQuery: string;
+  public isMobileResolution: boolean;
 
   constructor(
-    private doodleService: DoodleService,
-    private appStateService: AppStateService,
-    private globals: Globals,
-    private route: ActivatedRoute,
-    private router: Router,
-    private searchResultsService: SearchResultsService,
+    public doodleService: DoodleService,
+    public appStateService: AppStateService,
+    public globals: Globals,
+    public route: ActivatedRoute,
+    public router: Router,
+    public searchResultsService: SearchResultsService,
   ) {
 
     this.doodleService.getADI(this.route);

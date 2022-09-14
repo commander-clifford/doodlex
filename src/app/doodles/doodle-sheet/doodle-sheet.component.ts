@@ -16,15 +16,15 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 export class DoodleSheetComponent implements OnInit {
 
   constructor(
-    private globals: Globals,
-    private composeService: ComposeService,
-    private bottomSheet: MatBottomSheet,
+    public globals: Globals,
+    public composeService: ComposeService,
+    public bottomSheet: MatBottomSheet,
     public dialog: MatDialog,
     public dialogRef: MatDialogRef<DoodleSheetComponent>,
   ) { }
 
-  private doodletypes = DOODLETYPES;
-  private doodle = this.doodletypes[this.globals.activeDoodleID];
+  public doodletypes = DOODLETYPES;
+  public doodle = this.doodletypes[this.globals.activeDoodleID];
 
   ngOnInit() {
   }

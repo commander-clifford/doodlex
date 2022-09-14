@@ -13,13 +13,13 @@ import { Globals } from '../../globals';
 })
 export class SrpResultsListComponent implements OnInit {
 
-  selectedResult: object;
+  selectedResult: any;
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private location: Location,
-    private globals: Globals
+    public route: ActivatedRoute,
+    public router: Router,
+    public location: Location,
+    public globals: Globals
   ) {
     console.log('this.globals.selectedSearchResults',this.globals.selectedSearchResults);
     this.selectedResult = this.globals.selectedSearchResults;

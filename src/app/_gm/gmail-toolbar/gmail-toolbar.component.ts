@@ -19,15 +19,15 @@ import { ViewEncapsulation } from '@angular/core';
 
 export class GmailToolbarComponent implements OnInit {
 
-  private doodletypes = DOODLETYPES;
-  private gmailThemes = GMAILTHEMES;
+  public doodletypes = DOODLETYPES;
+  public gmailThemes = GMAILTHEMES;
 
   constructor(
-    private globals: Globals,
-    private sidenav: SidenavService,
-    private doodleSheetService: DoodleSheetService,
-    private shareService: ShareService,
-    @Inject(DOCUMENT) private document: Document
+    public globals: Globals,
+    public sidenav: SidenavService,
+    public doodleSheetService: DoodleSheetService,
+    public shareService: ShareService,
+    @Inject(DOCUMENT) public document: Document
   ) { }
 
   // @HostListener('mouseover')
@@ -52,28 +52,28 @@ export class GmailToolbarComponent implements OnInit {
 
   }
 
-  private menuClosed():void {
+  public menuClosed():void {
     console.log('menu closed');
     this.document.body.classList.remove('noscroll');
     this.globals.cardExpanded = false;
     this.globals.optOutWindowIsShown = false;
   }
 
-  private menuOpened():void {
+  public menuOpened():void {
     console.log('menu opened');
     this.document.body.classList.add('noscroll');
   }
 
-  private toggleDrawer():void {
+  public toggleDrawer():void {
     this.sidenav.toggle();
   }
 
-  private openDoodle():void {
+  public openDoodle():void {
     alert('adfs');
     this.shareService.open();
   }
 
-  private closeDoodle():void {
+  public closeDoodle():void {
     this.shareService.close();
   }
 

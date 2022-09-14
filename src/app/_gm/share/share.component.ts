@@ -18,16 +18,16 @@ import { ViewEncapsulation } from '@angular/core';
 
 export class ShareComponent implements OnInit {
 
-  private doodletypes = DOODLETYPES;
-  private archiveOn: boolean = false;
-  private doodle = this.doodletypes[this.globals.activeDoodleID];
+  public doodletypes = DOODLETYPES;
+  public archiveOn: boolean = false;
+  public doodle = this.doodletypes[this.globals.activeDoodleID];
 
   constructor(
-    private globals: Globals,
-    private composeService: ComposeService,
-    private snackBar: MatSnackBar,
-    private socialShareService: SocialShareService,
-    private bottomSheet: MatBottomSheet,
+    public globals: Globals,
+    public composeService: ComposeService,
+    public snackBar: MatSnackBar,
+    public socialShareService: SocialShareService,
+    public bottomSheet: MatBottomSheet,
   ) {}
 
   @HostListener('document:scroll', ['$event'])

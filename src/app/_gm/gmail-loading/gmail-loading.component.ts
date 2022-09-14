@@ -28,13 +28,13 @@ import { DoodleService } from '../../doodles/doodle.service';
 
 export class GmailLoadingComponent implements OnInit {
 
-  private myTimeOut;
-  private doodleStage;
+  public myTimeOut;
+  public doodleStage;
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private globals: Globals,
-    private doodleService: DoodleService,
+    public route: ActivatedRoute,
+    public router: Router,
+    public globals: Globals,
+    public doodleService: DoodleService,
   ) {
     this.doodleService.getADI(this.route);
     console.log('XXXX',Number(this.globals.activeDoodleID));
@@ -68,7 +68,7 @@ export class GmailLoadingComponent implements OnInit {
 
   }
 
-  private doAnimationDoodle(): void {
+  public doAnimationDoodle(): void {
 
     switch(Number(this.globals.activeDoodleID)) {
       case 0:
@@ -86,7 +86,7 @@ export class GmailLoadingComponent implements OnInit {
 
   }
 
-  private sumerAnimation(): void {
+  public sumerAnimation(): void {
 
     var i;
     for (i = 0; i <= 6; i++) {
@@ -237,7 +237,7 @@ export class GmailLoadingComponent implements OnInit {
 
   }
 
-  private meteorAnimation(): void {
+  public meteorAnimation(): void {
 
     this.doodleStage.setAttribute("style",'width: 720px;');
 

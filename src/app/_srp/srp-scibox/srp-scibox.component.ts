@@ -21,9 +21,9 @@ import {
 })
 export class SrpSciboxComponent implements OnInit {
 
-  private selectedResult;
+  public selectedResult;
 
-  constructor(private globals: Globals){}
+  constructor(public globals: Globals){}
 
   ngOnInit() {
 
@@ -44,7 +44,7 @@ export class SrpSciboxComponent implements OnInit {
 
   }
 
-  private doAuroraNaritive():void {
+  public doAuroraNaritive():void {
 
     const SCIBOXCARD = document.getElementById("scibox__mat-card");
 
@@ -122,7 +122,7 @@ export class SrpSciboxComponent implements OnInit {
 
   }
 
-  private doAuroraScience():void {
+  public doAuroraScience():void {
     /**
      *  Makes a Canvas element that simulates Northern Lights
      */
@@ -597,7 +597,7 @@ export class SrpSciboxComponent implements OnInit {
 
   }
 
-  private doGravityScience():void {
+  public doGravityScience():void {
     console.log('gravity');
   }
 

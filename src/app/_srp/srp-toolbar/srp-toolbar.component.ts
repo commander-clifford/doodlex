@@ -29,22 +29,22 @@ export class SrpToolbarComponent implements OnInit {
 
   @Input() query: string;
 
-  private doodletypes = DOODLETYPES;
+  public doodletypes = DOODLETYPES;
 
   searchResults = SEARCHRESULTS;
   selectedResult;
   values = '';
-  private searchQuery: string;
+  public searchQuery: string;
   secondaryShown: boolean = false;
   scrollHistory;
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private location: Location,
-    private messageService: MessageService,
-    private globals: Globals,
-    private el: ElementRef
+    public route: ActivatedRoute,
+    public router: Router,
+    public location: Location,
+    public messageService: MessageService,
+    public globals: Globals,
+    public el: ElementRef
   ) {}
 
   @HostListener('window:scroll', ['$event'])
@@ -159,7 +159,7 @@ export class SrpToolbarComponent implements OnInit {
     }
   }
 
-  private runUpdateQuery(event: any): void {
+  public runUpdateQuery(event: any): void {
     console.log(event.code);
     this.values += event.target.value + ' | ';
     console.log('this.values',this.values);
@@ -170,7 +170,7 @@ export class SrpToolbarComponent implements OnInit {
     }
   }
 
-  private checkResults(): void {
+  public checkResults(): void {
     // if(this.globals.searchQuery){
       this.navToQueryResults(this.globals.searchQuery);
     // } else {
@@ -178,11 +178,11 @@ export class SrpToolbarComponent implements OnInit {
     // }
   }
 
-  private alertNoQuery(): void {
+  public alertNoQuery(): void {
     alert("Not are those who 'search' are lost");
   }
 
-  private navToQueryResults(q): void {
+  public navToQueryResults(q): void {
     const query = this.globals.searchQuery ? this.globals.searchQuery.trim() : q;
     if(this.globals.eehStep > 0 && this.globals.isEeh){
       const theme = this.globals.eehTheme ? "/" + this.globals.eehTheme : null;
@@ -193,7 +193,7 @@ export class SrpToolbarComponent implements OnInit {
     }
   }
 
-  private changeSrpDoodleType(x): void {
+  public changeSrpDoodleType(x): void {
 
     // TODO this shoudl be a service
     if(x === 'fullReplace'){
@@ -220,7 +220,7 @@ export class SrpToolbarComponent implements OnInit {
     // TODO this shoudl be a service
 
   }
-  private changeStyle(x): void {
+  public changeStyle(x): void {
 
     // TODO this shoudl be a service
 

@@ -26,13 +26,13 @@ import {
 })
 export class SrpFunboxComponent implements OnInit {
 
-  private selectedResult;
-  private doneOnce: boolean = false;
-  private doodletypes = DOODLETYPES;
+  public selectedResult;
+  public doneOnce: boolean = false;
+  public doodletypes = DOODLETYPES;
 
 
   constructor(
-    private globals: Globals,
+    public globals: Globals,
   ){}
 
   ngOnInit() {
@@ -43,7 +43,7 @@ export class SrpFunboxComponent implements OnInit {
 
   }
 
-  private startTheFunBox(): void {
+  public startTheFunBox(): void {
 
     if(this.selectedResult.funbox.class === "easter"){
       this.setEasterStage();
@@ -51,7 +51,7 @@ export class SrpFunboxComponent implements OnInit {
 
   }
 
-  private openFunBox(): void {
+  public openFunBox(): void {
 
     if(this.doneOnce){return}
 
@@ -65,7 +65,7 @@ export class SrpFunboxComponent implements OnInit {
 
   }
 
-  private setEasterStage(): void {
+  public setEasterStage(): void {
 
     const FUNBOX = document.getElementById("funbox"); console.log('FUNBOX',FUNBOX);
     const SRPEASTEREGG = document.getElementById("srp-easter-egg"); console.log('SRPEASTEREGG',SRPEASTEREGG);
@@ -112,7 +112,7 @@ export class SrpFunboxComponent implements OnInit {
     this.growGrass();
   }
 
-  private runEasterStage(): void {
+  public runEasterStage(): void {
 
     this.globals.isEeh = true;
 
@@ -197,7 +197,7 @@ export class SrpFunboxComponent implements OnInit {
 
   }
 
-  private growGrass(): void {
+  public growGrass(): void {
 
 
 

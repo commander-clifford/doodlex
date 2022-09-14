@@ -9,7 +9,7 @@ import { MessageService } from '../../messages/message.service';
 })
 export class HomepageFooterComponent implements OnInit {
 
-  constructor(private messageService: MessageService) { }
+  constructor(public messageService: MessageService) { }
 
     ngOnInit() {
     }

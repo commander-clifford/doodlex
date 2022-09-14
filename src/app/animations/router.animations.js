@@ -1,13 +1,16 @@
 // import {trigger, animate, style, group, animateChild, query, stagger, transition} from '@angular/animations';
 import {sequence, trigger, stagger, animate, style, group, query as q, transition, keyframes, animateChild} from '@angular/animations';
-const query = (s,a,o={optional:true})=>q(s,a,o);
-
+// export const query = (s,a,o={optional:true})=>q(s,a,o);
+export function query(s, a, o={optional:true}) {
+  return q(s,a,o);
+}
 export const durationNum = 800;
 export const duration = durationNum+'ms ';
 export const mockDelayNum = 2000;
 export const mockDelay = mockDelayNum+'ms ';
 
-export const routerTransition = trigger('routerTransition', [
+export const Animations = {
+  routerTransition: trigger('routerTransition', [
 
   transition('search => gmail', [
 
@@ -364,4 +367,4 @@ export const routerTransition = trigger('routerTransition', [
 
 
 
-])
+])};

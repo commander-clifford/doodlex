@@ -10,6 +10,6 @@ import { ViewEncapsulation } from '@angular/core';
 
 export class HompepageHppComponent {
 
-  @Input() doodle: string;
+  @Input() doodle: any;
 
 }

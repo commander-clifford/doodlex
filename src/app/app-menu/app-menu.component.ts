@@ -15,14 +15,14 @@ export class AppMenuComponent implements OnInit {
 
   @Input() local: string;
 
-  private doodletypes = DOODLETYPES;
-  private doodletypesOrdered;
-  private activeDoodletypes;
+  public doodletypes = DOODLETYPES;
+  public doodletypesOrdered;
+  public activeDoodletypes;
 
   constructor(
-    private globals: Globals,
-    private route: ActivatedRoute,
-    private router: Router) {
+    public globals: Globals,
+    public route: ActivatedRoute,
+    public router: Router) {
 
 
 
@@ -50,7 +50,7 @@ export class AppMenuComponent implements OnInit {
 
   }
 
-  private setActiveDoodle(id, qry): void {
+  public setActiveDoodle(id, qry): void {
 
     console.log('setActiveDoodle',id);
 
@@ -67,7 +67,7 @@ export class AppMenuComponent implements OnInit {
 
 
 
-  private changeGmailDoodleType(x): void {
+  public changeGmailDoodleType(x): void {
 
     if(x === 'light'){
 
@@ -99,7 +99,7 @@ export class AppMenuComponent implements OnInit {
 
   }
 
-  private changeGmailDecor(x): void {
+  public changeGmailDecor(x): void {
 
 
 
@@ -157,7 +157,7 @@ export class AppMenuComponent implements OnInit {
 
   }
 
-  private changeGmailSearchBarColor(x): void {
+  public changeGmailSearchBarColor(x): void {
 
     console.log('x',x);
 
@@ -203,7 +203,7 @@ export class AppMenuComponent implements OnInit {
 
 
 
-  private changeSrpToolbarBehavior(x): void {
+  public changeSrpToolbarBehavior(x): void {
     if(x === 'toggle'){
       this.globals.srpToolbarMorph = false;
       this.globals.srpToolbarToggle = true;
@@ -214,7 +214,7 @@ export class AppMenuComponent implements OnInit {
     }
   }
 
-  private changeSrpDoodleType(x): void {
+  public changeSrpDoodleType(x): void {
 
     if(x === 'fullReplace'){
 
@@ -240,7 +240,7 @@ export class AppMenuComponent implements OnInit {
 
   }
 
-  private changeSrpDecor(x): void {
+  public changeSrpDecor(x): void {
 
     if(x === 0){
 
@@ -311,15 +311,15 @@ export class AppMenuComponent implements OnInit {
 
 
 
-  private toggleMobileLayout(): void {
+  public toggleMobileLayout(): void {
     this.globals.isMobileResolution = !this.globals.isMobileResolution;
   }
 
-  private toggleMobileFrame(): void {
+  public toggleMobileFrame(): void {
     this.globals.useMobileDeviceFrame = !this.globals.useMobileDeviceFrame;
   }
 
-  private changeLogoColor(x): void {
+  public changeLogoColor(x): void {
     if(x == 'standard'){
       this.globals.gmailDoodleAlternativeColor = false;
       this.globals.gmailDoodleStandardColor = true;

@@ -11,8 +11,8 @@ import { Globals } from '../../globals';
 export class HomepageToolbarComponent implements OnInit {
 
   constructor(
-    private messageService: MessageService,
-    private globals: Globals
+    public messageService: MessageService,
+    public globals: Globals
   ) {}
 
   ngOnInit() {

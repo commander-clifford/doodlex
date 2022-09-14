@@ -9,10 +9,10 @@ import { DOODLETYPES } from '../../doodles/doodletypes';
 })
 export class SuperComponent implements OnInit {
 
-  private doodletypes = DOODLETYPES;
+  public doodletypes = DOODLETYPES;
   
   constructor(
-    private globals: Globals,
+    public globals: Globals,
   ) { }
 
   ngOnInit() {

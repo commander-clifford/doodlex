@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { routerTransition } from './animations/router.animations';
+import { Animations } from './animations/router.animations';
 
 @Component({
   selector: 'app-root',
-  animations: [ routerTransition ],
+  animations: [ Animations.routerTransition ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

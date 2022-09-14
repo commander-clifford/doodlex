@@ -11,11 +11,11 @@ import { SidenavService } from '../gmail-drawer/drawer.service'
 })
 export class GmailToolbarMobileComponent implements OnInit {
 
-  private doodletypes = DOODLETYPES;
+  public doodletypes = DOODLETYPES;
 
   constructor(
-    private globals: Globals,
-    private sidenav: SidenavService
+    public globals: Globals,
+    public sidenav: SidenavService
 
   ) { }
 
@@ -25,7 +25,7 @@ export class GmailToolbarMobileComponent implements OnInit {
   ngOnInit() {
   }
 
-  private toggleDrawer():void {
+  public toggleDrawer():void {
 
     console.log('Clicked');
 

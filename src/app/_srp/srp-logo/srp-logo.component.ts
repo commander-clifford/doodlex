@@ -13,11 +13,11 @@ export class SrpLogoComponent implements OnInit {
 
   @Input() logo: object;
 
-  private doodletypes = DOODLETYPES;
+  public doodletypes = DOODLETYPES;
 
   constructor(
-    private router: Router,
-    private globals: Globals)
+    public router: Router,
+    public globals: Globals)
   { }
 
   ngOnInit() {
@@ -25,7 +25,7 @@ export class SrpLogoComponent implements OnInit {
     console.log("SRP-LOGO ngOnInit",this.logo);
   }
 
-  private determineRouterLink(): void {
+  public determineRouterLink(): void {
     this.router.navigate(["/search/"]);
   }
 
