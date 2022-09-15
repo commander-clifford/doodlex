@@ -15,7 +15,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 - Example:  `ng build --base-href=/www/no_crawl/doodle-search/`
             `ng build --base-href=/www/no_crawl/doodletype/`
-            `ng build --base-href=http://clifford.codes/doodlex/`
+            `ng build --prod --base-href=http://clifford.codes/doodlex/`
 
 ## Running unit tests
 
